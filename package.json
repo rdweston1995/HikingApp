@@ -1,0 +1,22 @@
+{
+  "name": "hikingapp",
+  "version": "1.0.0",
+  "description": "Hiking app project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdweston1995/HikingApp.git"
+  },
+  "author": "rdweston1995",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rdweston1995/HikingApp/issues"
+  },
+  "homepage": "https://github.com/rdweston1995/HikingApp#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
