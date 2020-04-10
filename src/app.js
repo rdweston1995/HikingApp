@@ -5,7 +5,9 @@ import Home from "./pages/Home/home";
 class App extends Component {
     render() {
         return(
-            <Home />
+            <Router>
+                <Home />
+            </Router>
         );
     }
 }
