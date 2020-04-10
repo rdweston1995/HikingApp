@@ -31,14 +31,14 @@ const axios = require("axios");
 // }
 
 class Geocode {
-    async getLatlon(location) {
-        return new Promise((reject, resolve) =>{
-            axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=AIzaSyADTa33SpEuErTRKXJ8UWucpoEUOnYV6wg`).then((res) => {
-                resolve(res.data.results[0]);
-            }).catch((err) => {
-                reject(err);
-            })
+    async getLatLon(location) {
+        return axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=AIzaSyADTa33SpEuErTRKXJ8UWucpoEUOnYV6wg`).then((res) => {
+            return res.data.results;
+        }).catch((err) => {
+            console.log(err);
         });
+
+
     }
 }
 
