@@ -8,9 +8,13 @@ import FormControl from "react-bootstrap/FormControl";
 
 class home extends React.Component {
     state = {
-        date: new Date()
+        date: new Date(),
+        hikes: []
     }
 
+    onSearch = () => {
+        console.log(document.getElementById('hikeSearch').value);
+    }
 
     render() {
         return (
@@ -19,9 +23,9 @@ class home extends React.Component {
                     <h1>Hiking App</h1>
                     <div>
                         <InputGroup className="mb-5">
-                            <FormControl aria-describedby="basic-addon2" />
+                            <FormControl type="text" aria-describedby="basic-addon2" id="hikeSearch"/>
                             <InputGroup.Append>
-                                <Button variant="outline-secondary">Search</Button>
+                                <Button variant="outline-secondary" onClick={(e) => this.onSearch()}>Search</Button>
                             </InputGroup.Append>
                         </InputGroup>
                     </div>
