@@ -1,44 +1,37 @@
 {
   "name": "hikingapp",
-  "version": "1.0.0",
-  "description": "Hiking app project",
-  "main": "index.js",
+  "version": "1.0.1",
+  "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig" : {
-    "extends" : "react-app"
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rdweston1995/HikingApp.git"
   },
   "author": "rdweston1995",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rdweston1995/HikingApp/issues"
-  },
-  "homepage": "https://github.com/rdweston1995/HikingApp#readme",
   "dependencies": {
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
-    "react-geocode": "^0.2.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.1"
   },
-  "browserslist" : {
-    "production" : [
+  "browserslist": {
+    "production": [
       ">0.2%",
       "not dead",
       "not op_mini all"
     ],
-    "development" : [
+    "development": [
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
