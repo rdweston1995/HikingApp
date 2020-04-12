@@ -17,15 +17,9 @@ class home extends React.Component {
     }
 
     onSearch = () => {
-        // console.log(process.env.REACT_APP_GOOGLE_API_KEY);
-
-        // console.log(document.getElementById('hikeSearch').value);
         new Geocode().getLatLng(document.getElementById('hikeSearch').value).then((data) => {
-            // console.log(data);
             new Hikes().basicHikingData(data.geometry.location.lat, data.geometry.location.lng).then((returnedHikes) => {
-                // console.log(returnedHikes);
                 this.setState({hikes: returnedHikes});
-                // console.log(this.state.hikes);
             }).catch((err) => {
                 console.log(err);
             })
