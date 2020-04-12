@@ -1,5 +1,6 @@
 import React from 'react';
-// import logo from './logo.svg';
+
+//CSS
 import './App.css';
 
 //Pages
