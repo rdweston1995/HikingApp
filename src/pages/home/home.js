@@ -5,6 +5,8 @@ import Col from "react-bootstrap/Col";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
+
+//Api
 import Hikes from "./../../api/hikes";
 import Geocode from "./../../api/geocode";
 
@@ -36,8 +38,8 @@ class home extends React.Component {
         return (
             <Row className="homeRow">
                 <Col>
-                    <h1>Hiking App</h1>
-                    <div>
+                    <h1 id='heading'>Hiking App</h1>
+                    <div id='search'>
                         <InputGroup className="mb-5">
                             <FormControl type="text" aria-describedby="basic-addon2" id="hikeSearch"/>
                             <InputGroup.Append>
