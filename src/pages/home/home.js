@@ -6,6 +6,9 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
 
+//CSS
+import "./home.css";
+
 //Api
 import Hikes from "./../../api/hikes";
 import Geocode from "./../../api/geocode";
@@ -19,7 +22,7 @@ class home extends React.Component {
     onSearch = () => {
         new Geocode().getLatLng(document.getElementById('hikeSearch').value).then((data) => {
             new Hikes().basicHikingData(data.geometry.location.lat, data.geometry.location.lng).then((returnedHikes) => {
-                this.setState({hikes: returnedHikes});
+                this.setState({ hikes: returnedHikes });
             }).catch((err) => {
                 console.log(err);
             })
@@ -30,30 +33,33 @@ class home extends React.Component {
 
     render() {
         return (
-            <Row className="homeRow">
-                <Col>
-                    <h1 id='heading'>Hiking App</h1>
+            <div className="home">
+                <Row className="homeRow">
+                    <h1 id='homeTitle' className="heading">Hiking App</h1>
                     <div id='search'>
-                        <InputGroup className="mb-5">
-                            <FormControl type="text" aria-describedby="basic-addon2" id="hikeSearch"/>
-                            <InputGroup.Append>
-                                <Button variant="outline-secondary" onClick={(e) => this.onSearch()}>Search</Button>
-                            </InputGroup.Append>
-                        </InputGroup>
+                        <Col className="homeCol" md={{span : 6, offset: 3}}>
+                            <InputGroup>
+                                <FormControl type="text" aria-describedby="basic-addon2" id="hikeSearch" />
+                                <InputGroup.Append>
+                                    <Button variant="outline-secondary" onClick={(e) => this.onSearch()}>Search</Button>
+                                </InputGroup.Append>
+                            </InputGroup>
+                        </Col>
                     </div>
-                </Col>
-                <Col>
-                    <div>
-                        {/* <h2>It is {this.state.date.toString()}</h2> */}
-                        {this.state.hikes.map(hike => 
-                            <div>
-                                <p>{hike.name}</p>
-                                <img src={hike.imgSmall} alt={hike.name}/>
-                            </div>
-                        )}
-                    </div>
-                </Col>
-            </Row>
+                </Row>
+                <Row className="hikeResults">
+                    <Col className="hikeResultsCol">
+                        <div id="hikeDiv">
+                            {this.state.hikes.map(hike =>
+                                <div>
+                                    <p>{hike.name}</p>
+                                    <img src={hike.imgSmall} alt={hike.name} />
+                                </div>
+                            )}
+                        </div>
+                    </Col>
+                </Row>
+            </div>
         )
     }
 }

@@ -1,0 +1,10 @@
+.heading {
+    /* position: absolute; */
+    text-align: center;
+    margin: 25px 0 25px 0;
+    width: 100%;
+}
+
+#search {
+    width: 100%;
+}
