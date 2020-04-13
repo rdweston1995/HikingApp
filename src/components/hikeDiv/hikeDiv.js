@@ -1,8 +1,11 @@
 import React from "react";
 
+//CSS
+import "./hikeDiv.css";
+
 function hikes(props) {
     return(
-        <div>
+        <div className={props.className}>
             <h2>{props.name}</h2>
             <h3>{props.location}</h3>
             <p>{props.summary}</p>

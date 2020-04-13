@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
 
 //Component
-import Hike from "./../../components/hikeDiv";
+import Hike from "../../components/hikeDiv/hikeDiv";
 
 //CSS
 import "./home.css";
@@ -68,7 +68,7 @@ class home extends React.Component {
                         <div id="hikeDiv">
                             {this.state.hikes.map(hike =>
                                 <Hike 
-                                    className="hikeResultDiv"
+                                    className="hikeResultsDiv"
                                     name={hike.name}
                                     summary={hike.summary}
                                     imgSmall={hike.imgSmall}
