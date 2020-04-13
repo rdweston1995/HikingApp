@@ -67,14 +67,11 @@ class home extends React.Component {
                     <Col className="hikeResultsCol">
                         <div id="hikeDiv">
                             {this.state.hikes.map(hike =>
-                                // <div>
-                                    // {/* <p>{hike.name}</p> */}
-                                    // {/* <img src={hike.imgSmall} alt={hike.name} /> */}
-                                // {/* </div> */}
                                 <Hike 
                                     className="hikeResultDiv"
                                     name={hike.name}
                                     summary={hike.summary}
+                                    imgSmall={hike.imgSmall}
                                     high={hike.high}
                                     low={hike.low}
                                     ascent={hike.ascent}
@@ -83,6 +80,7 @@ class home extends React.Component {
                                     stars={hike.stars}
                                     url={hike.url}
                                     difficulty={hike.difficulty}
+                                    key={hike.name}
                                     />
                             )}
                         </div>

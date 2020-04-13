@@ -4,8 +4,12 @@ function hikes(props) {
     return(
         <div>
             <h2>{props.name}</h2>
+            <h3>{props.location}</h3>
             <p>{props.summary}</p>
-            <p>Max Height: {props.high}ft</p>
+            <img src={props.imgSmall} alt={props.name}/>
+            <p>Heighest Point: {props.high}ft<br/>Lowest Point: {props.low}ft<br/>Ascent: {props.ascent}ft<br/>Length: {props.length} miles</p>
+            <p>Rating: {props.stars} / 5</p>
+
         </div>
     )
 }
