@@ -6,6 +6,9 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
 
+//Component
+import Hike from "./../../components/hikeDiv";
+
 //CSS
 import "./home.css";
 
@@ -64,10 +67,23 @@ class home extends React.Component {
                     <Col className="hikeResultsCol">
                         <div id="hikeDiv">
                             {this.state.hikes.map(hike =>
-                                <div>
-                                    <p>{hike.name}</p>
-                                    <img src={hike.imgSmall} alt={hike.name} />
-                                </div>
+                                // <div>
+                                    // {/* <p>{hike.name}</p> */}
+                                    // {/* <img src={hike.imgSmall} alt={hike.name} /> */}
+                                // {/* </div> */}
+                                <Hike 
+                                    className="hikeResultDiv"
+                                    name={hike.name}
+                                    summary={hike.summary}
+                                    high={hike.high}
+                                    low={hike.low}
+                                    ascent={hike.ascent}
+                                    location={hike.location}
+                                    length={hike.length}
+                                    stars={hike.stars}
+                                    url={hike.url}
+                                    difficulty={hike.difficulty}
+                                    />
                             )}
                         </div>
                     </Col>
