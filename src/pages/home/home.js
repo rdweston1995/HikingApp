@@ -33,11 +33,11 @@ class home extends React.Component {
 
     render() {
         return (
-            <div className="home">
-                <Row className="homeRow">
+            <div id="home" className="home">
+                <Row id="homeSearchRow" className="homeSearchRow">
                     <h1 id='homeTitle' className="heading">Hiking App</h1>
-                    <div id='search'>
-                        <Col className="homeCol" md={{span : 6, offset: 3}}>
+                    <div id='homeSearch'>
+                        <Col id="homeSearchCol" className="homeCol" md={{span : 6, offset: 3}}>
                             <InputGroup>
                                 <FormControl type="text" aria-describedby="basic-addon2" id="hikeSearch" />
                                 <InputGroup.Append>
