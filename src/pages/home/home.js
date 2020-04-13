@@ -14,6 +14,18 @@ import Hikes from "./../../api/hikes";
 import Geocode from "./../../api/geocode";
 
 class home extends React.Component {
+    /**
+     * Ascent
+     * difficulty
+     * high
+     * length
+     * location
+     * low
+     * name
+     * stars
+     * summary
+     * url
+     */
     state = {
         date: new Date(),
         hikes: []
@@ -22,6 +34,7 @@ class home extends React.Component {
     onSearch = () => {
         new Geocode().getLatLng(document.getElementById('hikeSearch').value).then((data) => {
             new Hikes().basicHikingData(data.geometry.location.lat, data.geometry.location.lng).then((returnedHikes) => {
+                console.log(returnedHikes);
                 this.setState({ hikes: returnedHikes });
             }).catch((err) => {
                 console.log(err);
