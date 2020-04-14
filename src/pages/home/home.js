@@ -58,7 +58,7 @@ class home extends React.Component {
                             <InputGroup>
                                 <FormControl type="text" aria-describedby="basic-addon2" id="hikeSearch" />
                                 <InputGroup.Append>
-                                    <Button variant="outline-secondary" onClick={(e) => this.onSearch()}>Search</Button>
+                                    <Button id="searchButton" className="searchButton" variant="outline-secondary" onClick={(e) => this.onSearch()}>Search</Button>
                                 </InputGroup.Append>
                             </InputGroup>
                         </Col>
