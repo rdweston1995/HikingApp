@@ -36,6 +36,7 @@ class home extends React.Component {
 
     onSearch = () => {
         new Geocode().getLatLng(document.getElementById('hikeSearch').value).then((data) => {
+            console.log(data);
             new Hikes().basicHikingData(data.geometry.location.lat, data.geometry.location.lng).then((returnedHikes) => {
                 console.log(returnedHikes);
                 this.setState({ hikes: returnedHikes });
