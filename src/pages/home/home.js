@@ -1,5 +1,6 @@
 //NPM imports
 import React from "react";
+import ReactRouterDom from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import InputGroup from "react-bootstrap/InputGroup";
@@ -31,7 +32,9 @@ class home extends React.Component {
      */
     state = {
         date: new Date(),
-        hikes: []
+        hikes: [],
+        redirect: false,
+        redirectTo: ''
     }
 
     onSearch = () => {
@@ -46,6 +49,13 @@ class home extends React.Component {
         }).catch((err) => {
             console.log(err);
         });
+    }
+
+    setRedirect = (selectedHike) => {
+        this.setState({
+            redirect: true,
+            redirectTo: selectedHike
+        })
     }
 
     render() {
