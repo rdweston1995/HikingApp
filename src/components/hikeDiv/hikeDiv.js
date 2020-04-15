@@ -5,7 +5,7 @@ import "./hikeDiv.css";
 
 function hikes(props) {
     return(
-        <div className={props.className}>
+        <div className={props.className} onClick={props.onClick}>
             <h2>{props.name}</h2>
             <h3>{props.location}</h3>
             {/* <p>{props.summary}</p> */}

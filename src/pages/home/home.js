@@ -1,6 +1,6 @@
 //NPM imports
 import React from "react";
-import ReactRouterDom from "react-router-dom";
+import {Redirect} from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import InputGroup from "react-bootstrap/InputGroup";
@@ -53,7 +53,7 @@ class home extends React.Component {
 
     renderRedirect = () => {
         if(this.state.redirect) {
-            return <ReactRouterDom.Redirect to="/test"/>
+            return <Redirect to="/test"/>
         }
     }
 
@@ -63,8 +63,14 @@ class home extends React.Component {
             redirectTo: selectedHike
         });
         if(this.state.redirect){
+            console.log(this.state.redirectTo);
             this.renderRedirect();
         }
+    }
+
+    hikeOnClick = () => {
+        console.log('testRedirect');
+        return <Redirect to="/test"/>
     }
 
     render() {
@@ -100,7 +106,7 @@ class home extends React.Component {
                                     stars={hike.stars}
                                     url={hike.url}
                                     difficulty={hike.difficulty}
-                                    onClick={this.setRedirect(hike.name)}
+                                    onClick={(e) => this.hikeOnClick()}
                                     key={hike.name}
                                     />
                             )}
