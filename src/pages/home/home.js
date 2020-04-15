@@ -51,11 +51,20 @@ class home extends React.Component {
         });
     }
 
+    renderRedirect = () => {
+        if(this.state.redirect) {
+            return <ReactRouterDom.Redirect to="/test"/>
+        }
+    }
+
     setRedirect = (selectedHike) => {
         this.setState({
             redirect: true,
             redirectTo: selectedHike
-        })
+        });
+        if(this.state.redirect){
+            this.renderRedirect();
+        }
     }
 
     render() {
@@ -91,6 +100,7 @@ class home extends React.Component {
                                     stars={hike.stars}
                                     url={hike.url}
                                     difficulty={hike.difficulty}
+                                    onClick={this.setRedirect(hike.name)}
                                     key={hike.name}
                                     />
                             )}
