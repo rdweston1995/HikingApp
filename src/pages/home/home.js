@@ -73,6 +73,17 @@ class home extends React.Component {
         return <Redirect to="/test"/>
     }
 
+    advancedOnClick = () => {
+        console.log(document.getElementById('advancedSearch').innerHTML);
+        if(document.getElementById('advancedSearch').innerHTML === 'Advanced'){
+            document.getElementById('advancedSearch').innerHTML = 'Less';
+            console.log("test");
+        } else {
+            document.getElementById('advancedSearch').innerHTML = 'Advanced';
+            console.log("test");
+        }
+    }
+
     render() {
         return (
             <div id="home" className="home">
@@ -86,6 +97,7 @@ class home extends React.Component {
                                     <Button id="searchButton" className="searchButton" variant="outline-secondary" onClick={(e) => this.onSearch()}>Search</Button>
                                 </InputGroup.Append>
                             </InputGroup>
+                            <p id="advancedSearch" className="homeAdvancedSearch" onClick={(e) => this.advancedOnClick()}>Advanced</p>
                         </Col>
                     </div>
                 </Row>
