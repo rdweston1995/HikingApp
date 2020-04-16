@@ -1,6 +1,6 @@
 //NPM imports
 import React from "react";
-import {Redirect} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import InputGroup from "react-bootstrap/InputGroup";
@@ -9,6 +9,7 @@ import FormControl from "react-bootstrap/FormControl";
 
 //Component
 import Hike from "../../components/hikeDiv/hikeDiv";
+import AdvancedSearch from "../../components/advancedSearch/advancedSearch";
 
 //CSS
 import "./home.css";
@@ -53,8 +54,8 @@ class home extends React.Component {
     }
 
     renderRedirect = () => {
-        if(this.state.redirect) {
-            return <Redirect to="/test"/>
+        if (this.state.redirect) {
+            return <Redirect to="/test" />
         }
     }
 
@@ -63,7 +64,7 @@ class home extends React.Component {
             redirect: true,
             redirectTo: selectedHike
         });
-        if(this.state.redirect){
+        if (this.state.redirect) {
             console.log(this.state.redirectTo);
             this.renderRedirect();
         }
@@ -71,16 +72,16 @@ class home extends React.Component {
 
     hikeOnClick = () => {
         console.log('testRedirect');
-        return <Redirect to="/test"/>
+        return <Redirect to="/test" />
     }
 
     advancedOnClick = () => {
-        if(document.getElementById('advancedSearch').innerHTML === 'Advanced'){
+        if (document.getElementById('advancedSearch').innerHTML === 'Advanced') {
             document.getElementById('advancedSearch').innerHTML = 'Less';
-            this.setState({advancedSearch: true});
+            this.setState({ advancedSearch: true });
         } else {
             document.getElementById('advancedSearch').innerHTML = 'Advanced';
-            this.setState({advancedSearch: false});
+            this.setState({ advancedSearch: false });
         }
     }
 
@@ -90,7 +91,7 @@ class home extends React.Component {
                 <Row id="homeSearchRow" className="homeSearchRow">
                     <h1 id='homeTitle' className="heading">Hiking App</h1>
                     <div id='homeSearch'>
-                        <Col id="homeSearchCol" className="homeCol" md={{span : 6, offset: 3}}>
+                        <Col id="homeSearchCol" className="homeCol" md={{ span: 6, offset: 3 }}>
                             <InputGroup>
                                 <FormControl type="text" aria-describedby="basic-addon2" id="hikeSearch" />
                                 <InputGroup.Append>
@@ -98,7 +99,12 @@ class home extends React.Component {
                                 </InputGroup.Append>
                             </InputGroup>
                             <p id="advancedSearch" className="homeAdvancedSearch" onClick={(e) => this.advancedOnClick()}>Advanced</p>
-                            
+                            <div>
+                                {this.state.advancedSearch
+                                    ? <AdvancedSearch />
+                                    : <p></p>
+                                }
+                            </div>
                         </Col>
                     </div>
                 </Row>
@@ -106,7 +112,7 @@ class home extends React.Component {
                     <Col className="hikeResultsCol">
                         <div id="hikeDiv">
                             {this.state.hikes.map(hike =>
-                                <Hike 
+                                <Hike
                                     className="hikeResultsDiv"
                                     name={hike.name}
                                     summary={hike.summary}
@@ -121,7 +127,7 @@ class home extends React.Component {
                                     difficulty={hike.difficulty}
                                     onClick={(e) => this.hikeOnClick()}
                                     key={hike.name}
-                                    />
+                                />
                             )}
                         </div>
                     </Col>
