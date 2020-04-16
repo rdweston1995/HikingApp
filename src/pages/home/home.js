@@ -34,6 +34,7 @@ class home extends React.Component {
         date: new Date(),
         hikes: [],
         redirect: false,
+        advancedSearch: false,
         redirectTo: ''
     }
 
@@ -74,13 +75,12 @@ class home extends React.Component {
     }
 
     advancedOnClick = () => {
-        console.log(document.getElementById('advancedSearch').innerHTML);
         if(document.getElementById('advancedSearch').innerHTML === 'Advanced'){
             document.getElementById('advancedSearch').innerHTML = 'Less';
-            console.log("test");
+            this.setState({advancedSearch: true});
         } else {
             document.getElementById('advancedSearch').innerHTML = 'Advanced';
-            console.log("test");
+            this.setState({advancedSearch: false});
         }
     }
 
@@ -98,6 +98,7 @@ class home extends React.Component {
                                 </InputGroup.Append>
                             </InputGroup>
                             <p id="advancedSearch" className="homeAdvancedSearch" onClick={(e) => this.advancedOnClick()}>Advanced</p>
+                            
                         </Col>
                     </div>
                 </Row>
