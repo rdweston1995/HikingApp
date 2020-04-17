@@ -53,6 +53,7 @@ class home extends React.Component {
             console.log(data);
             lat = data.geometry.location.lat;
             lng = data.geometry.location.lng;
+            console.log("lat: " + lat + "\t|\tlng: " + lng + "\t|\tmaxDistance: " + maxDistance + "\t|\tmaxResults: " + maxResults + "\t|\tminLength: " + minLength + "\t|\tminStars: " + minStars);
             new Hikes().basicHikingData(data.geometry.location.lat, data.geometry.location.lng).then((returnedHikes) => {
                 console.log(returnedHikes);
                 this.setState({ hikes: returnedHikes });
