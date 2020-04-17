@@ -19,7 +19,7 @@ function advancedSearch() {
                 <FormControl type="text" aria-describedby="basic-addon2" id="hikeMinLength" />
             </InputGroup>
             <InputGroup className="homeSearch">
-                <FormControl type="text" aria-describedby="basic-addon2" id="hikeRating" />
+                <FormControl type="text" aria-describedby="basic-addon2" id="hikeStars" />
             </InputGroup>
         </div>
     )
