@@ -40,7 +40,7 @@ class home extends React.Component {
     }
 
     onSearch = () => {
-        let lat = "", lng = "", maxDistance = "", maxResults = "", minLength = "", minStars = "";
+        let lat = "", lng = "", maxDistance = "30", maxResults = "10", minLength = "0", minStars = "0";
 
         if(this.state.advancedSearch) {
             maxDistance = document.getElementById('hikeDistance').value;
@@ -54,7 +54,7 @@ class home extends React.Component {
             lat = data.geometry.location.lat;
             lng = data.geometry.location.lng;
             console.log("lat: " + lat + "\t|\tlng: " + lng + "\t|\tmaxDistance: " + maxDistance + "\t|\tmaxResults: " + maxResults + "\t|\tminLength: " + minLength + "\t|\tminStars: " + minStars);
-            new Hikes().basicHikingData(data.geometry.location.lat, data.geometry.location.lng).then((returnedHikes) => {
+            new Hikes().basicHikingData(lat, lng, maxDistance, maxResults, minLength, minStars).then((returnedHikes) => {
                 console.log(returnedHikes);
                 this.setState({ hikes: returnedHikes });
             }).catch((err) => {
