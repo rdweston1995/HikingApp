@@ -40,6 +40,10 @@ class home extends React.Component {
     }
 
     onSearch = () => {
+        console.log(document.getElementById('hikeDistance').value);
+        console.log(document.getElementById('hikeMaxResults').value);
+        console.log(document.getElementById('hikeMinLength').value);
+        console.log(document.getElementById('hikeRating').value);
         new Geocode().getLatLng(document.getElementById('hikeSearch').value).then((data) => {
             console.log(data);
             new Hikes().basicHikingData(data.geometry.location.lat, data.geometry.location.lng).then((returnedHikes) => {
@@ -93,7 +97,7 @@ class home extends React.Component {
                     <div id='homeSearch'>
                         <Col id="homeSearchCol" className="homeCol" md={{ span: 6, offset: 3 }}>
                             <InputGroup>
-                                <FormControl type="text" aria-describedby="basic-addon2" id="hikeSearch" />
+                                <FormControl type="text" aria-describedby="basic-addon2" id="hikeSearch" className="hikeSearch"/>
                                 <InputGroup.Append>
                                     <Button id="searchButton" className="searchButton" variant="outline-secondary" onClick={(e) => this.onSearch()}>Search</Button>
                                 </InputGroup.Append>

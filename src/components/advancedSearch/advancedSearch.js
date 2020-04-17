@@ -9,17 +9,17 @@ import "./advancedSearch.css";
 function advancedSearch() {
     return (
         <div>
-            <InputGroup>
-                <FormControl type="text" aria-describedby="basic-addon2" id="hikeSearch" />
+            <InputGroup className="homeSearch">
+                <FormControl type="text" aria-describedby="basic-addon2" id="hikeDistance"/>
             </InputGroup>
-            <InputGroup>
-                <FormControl type="text" aria-describedby="basic-addon2" id="hikeSearch" />
+            <InputGroup className="homeSearch">
+                <FormControl type="text" aria-describedby="basic-addon2" id="hikeMaxResults" />
             </InputGroup>
-            <InputGroup>
-                <FormControl type="text" aria-describedby="basic-addon2" id="hikeSearch" />
+            <InputGroup className="homeSearch">
+                <FormControl type="text" aria-describedby="basic-addon2" id="hikeMinLength" />
             </InputGroup>
-            <InputGroup>
-                <FormControl type="text" aria-describedby="basic-addon2" id="hikeSearch" />
+            <InputGroup className="homeSearch">
+                <FormControl type="text" aria-describedby="basic-addon2" id="hikeRating" />
             </InputGroup>
         </div>
     )

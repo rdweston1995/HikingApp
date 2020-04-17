@@ -8,6 +8,7 @@
 #homeSearch {
     width: 100%;
     /* height: 100%; */
+    /* margin : 10px; */
 }
 
 #homeSearchRow {
@@ -29,4 +30,8 @@
 .homeAdvancedSearch {
     float: right;
     text-decoration: underline;
+}
+
+#homeSearch {
+    margin: 0 0 10px 0;
 }
