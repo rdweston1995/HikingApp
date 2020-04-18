@@ -1,5 +1,9 @@
+//Node Imports
 import React from "react";
-import GoogleMapReact from "google-map-react";
+// import GoogleMapReact from "google-map-react";
+
+//CSS
+import "./map.css";
 
 class Map extends React.Component {
     render() {

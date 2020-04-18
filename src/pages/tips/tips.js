@@ -1,4 +1,8 @@
+//Node Imports
 import React from "react";
+
+//CSS
+import "./tips.css";
 
 class Tips extends React.Component {
     render() {
