@@ -10,6 +10,7 @@ import Home from "./pages/home/home";
 import Map from "./pages/map/map";
 import Account from "./pages/account/account";
 import Tips from "./pages/tips/tips";
+import Hike from "./pages/hike/hike";
 
 class App extends React.Component {
     render(){
@@ -20,6 +21,7 @@ class App extends React.Component {
                     <Route exact path="/map" component={Map} />
                     <Route exact path="/account" component={Account} />
                     <Route exact path="/tips" component={Tips} />
+                    <Route exact path="/hike" component={Hike} />
                     <Route component={Home} />
                 </Switch>
             </Router>
