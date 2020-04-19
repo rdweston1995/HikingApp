@@ -6,20 +6,20 @@ import Button from "react-bootstrap/Button";
 //CSS
 import "./loginModal.css";
 
-function loginModal() {
+function loginModal(props) {
     // const [show, setShow] = useState(false);
     // const handleClose = () => setShow(false);
     // const handleShow = () => setShow(true);
     return (
         <>
-            <Modal >
+            <Modal show={props.show} onHide={props.onClose} animation={false}>
                 <Modal.Header closeButton>
                     Modal Heading
                 </Modal.Header>
                 <Modal.Body>Modal Body</Modal.Body>
                 <Modal.Footer>
-                    <Button varient="secondary" >Close</Button>
-                    <Button varient="primary" >Submit</Button>
+                    <Button varient="secondary" onClick={props.onClose}>Close</Button>
+                    <Button varient="primary" onClick={props.onClose}>Submit</Button>
                 </Modal.Footer>
             </Modal>
         </>

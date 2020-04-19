@@ -10,6 +10,7 @@ import FormControl from "react-bootstrap/FormControl";
 //Component
 import Hike from "../../components/hikeDiv/hikeDiv";
 import AdvancedSearch from "../../components/advancedSearch/advancedSearch";
+import LoginModal from "../../components/loginModal/loginModal";
 
 //CSS
 import "./home.css";
@@ -36,7 +37,8 @@ class home extends React.Component {
         hikes: [],
         redirect: false,
         advancedSearch: false,
-        redirectTo: ''
+        redirectTo: '',
+        loginModalShow: false
     }
 
     onSearch = () => {
@@ -50,10 +52,10 @@ class home extends React.Component {
         }
 
         new Geocode().getLatLng(document.getElementById('hikeSearch').value).then((data) => {
-            console.log(data);
+            // console.log(data);
             lat = data.geometry.location.lat;
             lng = data.geometry.location.lng;
-            console.log("lat: " + lat + "\t|\tlng: " + lng + "\t|\tmaxDistance: " + maxDistance + "\t|\tmaxResults: " + maxResults + "\t|\tminLength: " + minLength + "\t|\tminStars: " + minStars);
+            // console.log("lat: " + lat + "\t|\tlng: " + lng + "\t|\tmaxDistance: " + maxDistance + "\t|\tmaxResults: " + maxResults + "\t|\tminLength: " + minLength + "\t|\tminStars: " + minStars);
             new Hikes().basicHikingData(lat, lng, maxDistance, maxResults, minLength, minStars).then((returnedHikes) => {
                 console.log(returnedHikes);
                 this.setState({ hikes: returnedHikes });
@@ -97,6 +99,9 @@ class home extends React.Component {
         }
     }
 
+    loginHandleClose = () => {this.setState({loginModalShow: false})}
+    loginHandleShow = () => {this.setState({loginModalShow: true})}
+
     render() {
         return (
             <div id="home" className="home">
@@ -116,6 +121,17 @@ class home extends React.Component {
                                     ? <AdvancedSearch />
                                     : <p></p>
                                 }
+                            </div>
+                        </Col>
+                        <Col>
+                            <button onClick={this.state.loginHandleShow}>Login</button>
+                            <div>
+                                {this.state.loginModalShow
+                                    ? <LoginModal 
+                                        show={this.state.loginModalShow}
+                                        onClose={this.loginHandleClose}
+                                        onShow={this.loginHandleShow}/>
+                                    : <></>}
                             </div>
                         </Col>
                     </div>
