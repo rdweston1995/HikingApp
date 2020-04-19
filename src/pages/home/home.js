@@ -100,7 +100,10 @@ class home extends React.Component {
     }
 
     loginHandleClose = () => {this.setState({loginModalShow: false})}
-    loginHandleShow = () => {this.setState({loginModalShow: true})}
+    loginHandleShow = () => {
+        this.setState({loginModalShow: true});
+        // console.log(this.state.loginModalShow);
+    }
 
     render() {
         return (
@@ -124,7 +127,7 @@ class home extends React.Component {
                             </div>
                         </Col>
                         <Col>
-                            <button onClick={this.state.loginHandleShow}>Login</button>
+                            <button onClick={(e) => this.loginHandleShow()}>Login</button>
                             <div>
                                 {this.state.loginModalShow
                                     ? <LoginModal 
