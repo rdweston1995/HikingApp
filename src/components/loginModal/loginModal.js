@@ -15,7 +15,14 @@ function loginModal(props) {
                 <Modal.Header closeButton>
                     Modal Heading
                 </Modal.Header>
-                <Modal.Body>Modal Body</Modal.Body>
+                <Modal.Body>
+                    <InputGroup>
+                        <FormControl type="text" aria-describedby="basic-addon2" id="loginEmail" />
+                    </InputGroup>
+                    <InputGroup>
+                        <FormControl type="text" aria-describedby="basic-addon2" id="loginPassword" />
+                    </InputGroup>
+                </Modal.Body>
                 <Modal.Footer>
                     <Button varient="secondary" onClick={props.onClose}>Close</Button>
                     <Button varient="primary" onClick={props.onClose}>Submit</Button>
