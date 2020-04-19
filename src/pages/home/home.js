@@ -100,10 +100,7 @@ class home extends React.Component {
     }
 
     loginHandleClose = () => {this.setState({loginModalShow: false})}
-    loginHandleShow = () => {
-        this.setState({loginModalShow: true});
-        // console.log(this.state.loginModalShow);
-    }
+    loginHandleShow = () => {this.setState({loginModalShow: true});}
 
     render() {
         return (
@@ -122,7 +119,7 @@ class home extends React.Component {
                             <div>
                                 {this.state.advancedSearch
                                     ? <AdvancedSearch />
-                                    : <p></p>
+                                    : <></>
                                 }
                             </div>
                         </Col>
