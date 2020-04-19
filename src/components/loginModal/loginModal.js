@@ -13,19 +13,21 @@ function loginModal(props) {
         <>
             <Modal show={props.show} onHide={props.onClose} animation={false}>
                 <Modal.Header closeButton>
-                    Modal Heading
+                    Login
                 </Modal.Header>
                 <Modal.Body>
+                    <p>Email:</p>
                     <InputGroup>
                         <FormControl type="text" aria-describedby="basic-addon2" id="loginEmail" />
                     </InputGroup>
+                    <p>Password:</p>
                     <InputGroup>
                         <FormControl type="text" aria-describedby="basic-addon2" id="loginPassword" />
                     </InputGroup>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button varient="secondary" onClick={props.onClose}>Close</Button>
-                    <Button varient="primary" onClick={props.onClose}>Submit</Button>
+                    {/* <Button varient="secondary" onClick={props.onClose}>Close</Button> */}
+                    <Button varient="primary" onClick={props.onClose}>Login</Button>
                 </Modal.Footer>
             </Modal>
         </>
