@@ -2,14 +2,13 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import InputGroup from "react-bootstrap/InputGroup";
+import FormControl from "react-bootstrap/FormControl";
 
 //CSS
 import "./loginModal.css";
 
 function loginModal(props) {
-    // const [show, setShow] = useState(false);
-    // const handleClose = () => setShow(false);
-    // const handleShow = () => setShow(true);
     return (
         <>
             <Modal show={props.show} onHide={props.onClose} animation={false}>
