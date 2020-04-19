@@ -90,6 +90,11 @@ class home extends React.Component {
 
     loginHandleClose = () => {this.setState({loginModalShow: false})}
     loginHandleShow = () => {this.setState({loginModalShow: true});}
+    loginOnSubmit = () => {
+        console.log(document.getElementById("loginEmail").value);
+        console.log(document.getElementById("loginPassword").value);
+        this.loginHandleClose();
+    }
 
     render() {
         return (
@@ -119,7 +124,8 @@ class home extends React.Component {
                                     ? <LoginModal 
                                         show={this.state.loginModalShow}
                                         onClose={this.loginHandleClose}
-                                        onShow={this.loginHandleShow}/>
+                                        onShow={this.loginHandleShow}
+                                        onSubmit={this.loginOnSubmit}/>
                                     : <></>}
                             </div>
                         </Col>
