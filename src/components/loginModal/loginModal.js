@@ -27,6 +27,7 @@ function loginModal(props) {
                 </Modal.Body>
                 <Modal.Footer>
                     {/* <Button varient="secondary" onClick={props.onClose}>Close</Button> */}
+                    {/* <Button varient="primary" onClick={props.accountShow}>Sign Up</Button> */}
                     <Button varient="primary" onClick={props.onSubmit}>Login</Button>
                 </Modal.Footer>
             </Modal>

@@ -12,15 +12,22 @@ function accountSignUp(props) {
     return (
         <>
             <Modal show={props.show} onHide={props.onClose} animation={false}>
-                <Modal.Header closeButton>Sign Up</Modal.Header>
+                <Modal.Header closeButton>
+                    Login
+                </Modal.Header>
                 <Modal.Body>
-                    <p></p>
+                    <p>Email:</p>
                     <InputGroup>
-                        <FormControl type="text" aria-describedby="basic-addon2" id="" />
+                        <FormControl type="text" aria-describedby="basic-addon2" id="loginEmail" />
+                    </InputGroup>
+                    <p>Password:</p>
+                    <InputGroup>
+                        <FormControl type="text" aria-describedby="basic-addon2" id="loginPassword" />
                     </InputGroup>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button varient="primary" onClick={props.onSubmit}>Submit</Button>
+                    {/* <Button varient="secondary" onClick={props.onClose}>Close</Button> */}
+                    <Button varient="primary" onClick={props.onSubmit}>Login</Button>
                 </Modal.Footer>
             </Modal>
         </>

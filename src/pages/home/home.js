@@ -11,6 +11,7 @@ import FormControl from "react-bootstrap/FormControl";
 import Hike from "../../components/hikeDiv/hikeDiv";
 import AdvancedSearch from "../../components/advancedSearch/advancedSearch";
 import LoginModal from "../../components/loginModal/loginModal";
+import SignUpModal from "../../components/accountSignUpModal/accountSignUpModal";
 
 //CSS
 import "./home.css";
@@ -26,7 +27,8 @@ class home extends React.Component {
         redirect: false,
         advancedSearch: false,
         redirectTo: '',
-        loginModalShow: false
+        loginModalShow: false,
+        signUpShow: false
     }
 
     onSearch = () => {
@@ -96,6 +98,15 @@ class home extends React.Component {
         this.loginHandleClose();
     }
 
+    accountSignUpClose = () => {this.setState({signUpShow: false})}
+    accountSignUpShow = () => {
+        this.loginHandleClose();
+        this.setState({signUpShow: true});
+    }
+    accountOnSubmit = () => {
+        this.accountSignUpClose();
+    }
+
     render() {
         return (
             <div id="home" className="home">
@@ -119,14 +130,24 @@ class home extends React.Component {
                         </Col>
                         <Col>
                             <button onClick={(e) => this.loginHandleShow()}>Login</button>
+                            <button onClick={(e) => this.accountSignUpShow()}>Sign Up</button>
                             <div>
                                 {this.state.loginModalShow
                                     ? <LoginModal 
                                         show={this.state.loginModalShow}
                                         onClose={this.loginHandleClose}
                                         onShow={this.loginHandleShow}
+                                        accountShow={this.accountSignUpShow}
                                         onSubmit={this.loginOnSubmit}/>
                                     : <></>}
+                            </div>
+                            <div>
+                                {this.state.signUpShow ?
+                                    <SignUpModal 
+                                        show={this.state.signUpShow}
+                                        onClose={this.accountSignUpClose}
+                                        onShow={this.accountSignUpShow}
+                                        onSubmit={this.accountOnSubmit}/> : <></>}
                             </div>
                         </Col>
                     </div>
