@@ -6,11 +6,13 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 
 //Pages
-import Home from "./pages/home/home";
+// import Home from "./pages/home/home";
+import Home from "./pages/newHome/newHome";
 import Map from "./pages/map/map";
 import Account from "./pages/account/account";
 import Tips from "./pages/tips/tips";
 import Hike from "./pages/hike/hike";
+
 
 class App extends React.Component {
     render(){
