@@ -2,4 +2,14 @@
     background-color: #ffffff;
     /* float: left; */
     /* height: 10%; */
+    padding: 15px;
+}
+
+.navBarLogo{
+    text-align: center;
+}
+
+.testDiv {
+    width: 33%;
+    float: left;
 }

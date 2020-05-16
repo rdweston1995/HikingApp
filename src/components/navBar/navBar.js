@@ -9,18 +9,18 @@ import "./navBar.css";
 function navBar() {
     return(
         <Row id="navBar" className="navBar">
-            <Col>
-                <p>Explore</p>
-                <p>Plan</p>
-                <p>History</p>
+            <Col className="colLeft">
+                <div className="testDiv">test</div>
+                <div className="testDiv">test</div>
+                <div className="testDiv">test</div>
             </Col>
-            <Col xs={6}>
-                <p>Logo</p>
+            <Col xs={6} className="navBarLogo">
+                <div className="navBarLogoDiv">Test</div>
             </Col>
             <Col>
-                <p>Help</p>
-                <p>Sign Up</p>
-                <p>Log In</p>
+                <div className="testDiv">Test</div>
+                <div className="testDiv">Test</div>
+                <div className="testDiv">Test</div>
             </Col>      
         </Row>
     );

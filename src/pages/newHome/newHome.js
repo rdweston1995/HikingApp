@@ -8,6 +8,8 @@ import NavBar from "./../../components/navBar/navBar";
 import "./newHome.css";
 
 //API
+import Hikes from "./../../api/hikes";
+import Geocode from "./../../api/geocode";
 
 class Home extends React.Component{
     render(){
