@@ -1,0 +1,8 @@
+.searchHikeDiv {
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    height: 90vh;
+    /* margin: 15px auto 15px auto; */
+    text-align: center;
+}

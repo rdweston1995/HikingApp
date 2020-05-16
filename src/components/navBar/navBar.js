@@ -10,17 +10,17 @@ function navBar() {
     return(
         <Row id="navBar" className="navBar">
             <Col className="colLeft">
-                <div className="testDiv">test</div>
-                <div className="testDiv">test</div>
-                <div className="testDiv">test</div>
+                <div className="testDiv">Explore</div>
+                <div className="testDiv">Plan</div>
+                <div className="testDiv">Tips</div>
             </Col>
             <Col xs={6} className="navBarLogo">
-                <div className="navBarLogoDiv">Test</div>
+                <div className="navBarLogoDiv">Hiking App</div>
             </Col>
             <Col>
-                <div className="testDiv">Test</div>
-                <div className="testDiv">Test</div>
-                <div className="testDiv">Test</div>
+                <div className="testDiv">Help</div>
+                <div className="testDiv">Login</div>
+                <div className="testDiv">Sign Up</div>
             </Col>      
         </Row>
     );

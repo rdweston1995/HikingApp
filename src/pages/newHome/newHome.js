@@ -3,6 +3,7 @@ import React from "react";
 
 //Component
 import NavBar from "./../../components/navBar/navBar";
+import Search from "./../../components/search/search";
 
 //CSS
 import "./newHome.css";
@@ -16,6 +17,7 @@ class Home extends React.Component{
         return(
             <>
                 <NavBar />
+                <Search />
             </>
         );
     };

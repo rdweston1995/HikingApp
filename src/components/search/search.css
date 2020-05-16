@@ -1,0 +1,22 @@
+#search {
+    width: 100%;
+    height: 90vh;
+    background-color: #ffffff;
+}
+
+#hikeSearch {
+    width: 60%;
+    /* height: 100%; */
+    margin: auto;
+    position: relative;
+    top: 40%;
+}
+
+.hikeSearch {
+    position: relative;
+    height: 10vh;
+}
+
+#searchButton {
+    width: 15vh;
+}
