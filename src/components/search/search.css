@@ -4,12 +4,12 @@
     background-color: #ffffff;
 }
 
-#hikeSearch {
+#hikeSearchBar {
     width: 60%;
     /* height: 100%; */
     margin: auto;
     position: relative;
-    top: 40%;
+    top: 30%;
 }
 
 .hikeSearch {
