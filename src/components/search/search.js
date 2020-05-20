@@ -11,7 +11,7 @@ import "./search.css";
 function Search (props) {
     const history = useHistory();
 
-    const onSubmit = () => {
+    const onSubmit = async () => {
         props.onSearch();
         history.push("results");
     }
