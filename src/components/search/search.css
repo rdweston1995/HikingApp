@@ -19,4 +19,10 @@
 
 #searchButton {
     width: 15vh;
+    background-color: #ffffff;
+}
+
+.searchDiv {
+    background-image: url("./../../images/homeBackground.JPG");
+    background-size: 90%;
 }
