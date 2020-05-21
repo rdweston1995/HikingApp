@@ -2,6 +2,7 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
 
 //CSS
 import "./navBar.css";
@@ -19,8 +20,10 @@ function navBar() {
             </Col>
             <Col>
                 <div className="testDiv">Help</div>
-                <div className="testDiv">Login</div>
-                <div className="testDiv">Sign Up</div>
+                {/* <div className="testDiv">Login</div> */}
+                <Button className="navBarBtn loginBtn">Login</Button>
+                {/* <div className="testDiv">Sign Up</div> */}
+                <Button className="navBarBtn signUpBtn">Sign Up</Button>
             </Col>      
         </Row>
     );

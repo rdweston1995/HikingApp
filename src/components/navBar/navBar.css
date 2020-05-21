@@ -8,6 +8,13 @@
 
 .navBarLogo{
     text-align: center;
+    font-size: 1.5em;
+}
+
+.navBarBtn {
+    width: 30%;
+    margin: 1.5%;
+    background-color: grey;
 }
 
 .testDiv {
