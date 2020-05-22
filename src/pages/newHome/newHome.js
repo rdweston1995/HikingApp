@@ -5,6 +5,8 @@ import { useHistory } from "react-router-dom";
 //Component
 import NavBar from "./../../components/navBar/navBar";
 import Search from "./../../components/search/search";
+import LoginModal from "./../../components/loginModal/loginModal";
+import SignUpModal from "./../../components/accountSignUpModal/accountSignUpModal";
 
 //CSS
 import "./newHome.css";
@@ -12,6 +14,7 @@ import "./newHome.css";
 //API
 import Hikes from "./../../api/hikes";
 import Geocode from "./../../api/geocode";
+// import loginModal from "../../components/loginModal/loginModal";
 
 class Home extends React.Component {
     constructor(props) {
@@ -42,10 +45,46 @@ class Home extends React.Component {
         }
     }
 
+    loginHandleClose = () => {this.setState({loginModalShow: false})}
+    loginHandleShow = () => {this.setState({loginModalShow: true})}
+    loginOnSubmit = () => {
+        console.log(document.getElementById("loginEmail").value);
+        console.log(document.getElementById("loginPassword").value);
+        this.loginHandleClose();
+    }
+
+    accountSignUpClose = () => {this.setState({signUpShow: false})}
+    accountSignUpShow = () => {
+        this.loginHandleClose();
+        this.setState({signUpShow: true});
+    }
+    accountOnSubmit = () => {this.accountSignUpClose()}
+
     render() {
         return (
             <>
-                <NavBar />
+                <NavBar 
+                    loginHandleShow={this.loginHandleShow}
+                    accountSignUpShow={this.accountSignUpShow}
+                />
+                <div>
+                    {this.state.loginModalShow
+                        ? <LoginModal
+                            show={this.state.loginModalShow}
+                            onClose={this.loginHandleClose}
+                            onShow={this.loginHandleShow}
+                            accountShow={this.accountSignUpShow}
+                            onSubmit={this.loginOnSubmit}
+                            />
+                            : <></>}
+                    {this.state.signUpShow ?
+                        <SignUpModal
+                            show={this.state.signUpShow}
+                            onClose={this.accountSignUpClose}
+                            onShow={this.accountSignUpShow}
+                            onSubmit={this.accountOnSubmit}/>
+                        : <></>}
+                </div>
                 <Search
                     onSearch={this.onSearch}
                 />
