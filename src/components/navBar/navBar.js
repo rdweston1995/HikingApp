@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 //CSS
 import "./navBar.css";
 
-function navBar() {
+function navBar(props) {
     return(
         <Row id="navBar" className="navBar">
             <Col className="colLeft">
@@ -21,9 +21,9 @@ function navBar() {
             <Col>
                 <div className="testDiv">Help</div>
                 {/* <div className="testDiv">Login</div> */}
-                <Button className="navBarBtn loginBtn">Login</Button>
+                <Button className="navBarBtn loginBtn" onClick={(e) => props.loginHandleShow()}>Login</Button>
                 {/* <div className="testDiv">Sign Up</div> */}
-                <Button className="navBarBtn signUpBtn">Sign Up</Button>
+                <Button className="navBarBtn signUpBtn" onClick={(e) => props.accountSignUpShow()}>Sign Up</Button>
             </Col>      
         </Row>
     );
