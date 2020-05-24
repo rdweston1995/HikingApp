@@ -32,10 +32,7 @@ class Home extends React.Component {
                 lat = data.geometry.location.lat;
                 lng = data.geometry.location.lng;
                 new Hikes().basicHikingData(lat, lng).then((returnedHikes) => {
-                    // console.log(returnedHikes);
                     this.setState({hikes: returnedHikes});
-                    // localStorage.setItem('hikes', JSON.stringify(returnedHikes));
-                    // console.log(localStorage.getItem('hikes'));
                     console.log(this.state.hikes);
                 }).catch((err) => {
                     console.log(err);
