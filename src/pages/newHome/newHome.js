@@ -33,6 +33,7 @@ class Home extends React.Component {
                 lng = data.geometry.location.lng;
                 new Hikes().basicHikingData(lat, lng).then((returnedHikes) => {
                     this.setState({hikes: returnedHikes});
+                    this.setState({searched: true});
                     console.log(this.state.hikes);
                 }).catch((err) => {
                     console.log(err);
@@ -61,7 +62,29 @@ class Home extends React.Component {
     render() {
         return (
             <>
-                <NavBar 
+                <div>
+                    <NavBar 
+                        loginHandleShow={this.loginHandleShow}
+                        accountSignUpShow={this.accountSignUpShow}/>
+                    {this.state.loginModalShow
+                        ? <LoginModal
+                            show={this.state.loginModalShow}
+                            onClose={this.loginHandleClose}
+                            onShow={this.loginHandleShow}
+                            accountShow={this.accountSignUpShow}
+                            onSubmit={this.loginOnSubmit} /> : <></>}
+                    {this.state.signUpShow
+                        ? <SignUpModal
+                            show={this.state.signUpShow}
+                            onClose={this.accountSignUpClose}
+                            onShow={this.accountSignUpShow}
+                            onSubmit={this.accountOnSubmit}/> : <></>}
+                </div>
+                {/* {this.state.searched 
+                    ? <Search onSearch={this.onSearch}/> : <></> } */}
+                {this.state.searched ?
+                    <></> : <Search onSearch={this.onSearch}/>}
+                {/* <NavBar 
                     loginHandleShow={this.loginHandleShow}
                     accountSignUpShow={this.accountSignUpShow}
                 />
@@ -84,7 +107,7 @@ class Home extends React.Component {
                         : <></>}
                 </div>
                 <Search
-                    onSearch={this.onSearch}
+                    onSearch={this.onSearch} */}
                 />
             </>
         );
