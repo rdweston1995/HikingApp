@@ -7,6 +7,7 @@ import NavBar from "./../../components/navBar/navBar";
 import Search from "./../../components/search/search";
 import LoginModal from "./../../components/loginModal/loginModal";
 import SignUpModal from "./../../components/accountSignUpModal/accountSignUpModal";
+import Hike from "./../../components/hikeDiv/hikeDiv";
 
 //CSS
 import "./newHome.css";
@@ -83,7 +84,25 @@ class Home extends React.Component {
                 {/* {this.state.searched 
                     ? <Search onSearch={this.onSearch}/> : <></> } */}
                 {this.state.searched ?
-                    <></> : <Search onSearch={this.onSearch}/>}
+                    <div id="hikeDiv">
+                        {this.state.hikes.map(hike => 
+                            <Hike
+                                className="hikeResultsDiv"
+                                name={hike.name}
+                                summary={hike.summary}
+                                imgSmall={hike.imgSmall}
+                                high={hike.high}
+                                low={hike.low}
+                                ascent={hike.ascent}
+                                location={hike.location}
+                                length={hike.length}
+                                stars={hike.stars}
+                                url={hike.url}
+                                difficulty={hike.difficulty}
+                                key={hike.name} />
+                        )}
+                    </div>
+                     : <Search onSearch={this.onSearch}/>}
                 {/* <NavBar 
                     loginHandleShow={this.loginHandleShow}
                     accountSignUpShow={this.accountSignUpShow}
