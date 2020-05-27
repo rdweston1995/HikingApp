@@ -81,8 +81,6 @@ class Home extends React.Component {
                             onShow={this.accountSignUpShow}
                             onSubmit={this.accountOnSubmit}/> : <></>}
                 </div>
-                {/* {this.state.searched 
-                    ? <Search onSearch={this.onSearch}/> : <></> } */}
                 {this.state.searched ?
                     <div id="hikeDiv">
                         {this.state.hikes.map(hike => 
