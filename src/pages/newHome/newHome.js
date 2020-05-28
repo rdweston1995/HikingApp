@@ -15,7 +15,6 @@ import "./newHome.css";
 //API
 import Hikes from "./../../api/hikes";
 import Geocode from "./../../api/geocode";
-// import loginModal from "../../components/loginModal/loginModal";
 
 class Home extends React.Component {
     constructor(props) {
