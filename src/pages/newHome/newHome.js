@@ -1,6 +1,6 @@
 //Node imports
 import React from "react";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 //Component
 import NavBar from "./../../components/navBar/navBar";
@@ -29,6 +29,7 @@ class Home extends React.Component {
             let lat = '', lng = '', maxDistance = '30', maxResults = '10', minLength = '0', minStars = '0';
 
             new Geocode().getLatLng(document.getElementById('hikeSearch').value).then((data) => {
+                console.log(`maxDistance ${maxDistance} | maxResults ${maxResults} | minLength ${minLength} | minStars ${minStars}`);
                 lat = data.geometry.location.lat;
                 lng = data.geometry.location.lng;
                 new Hikes().basicHikingData(lat, lng).then((returnedHikes) => {
@@ -100,30 +101,6 @@ class Home extends React.Component {
                         )}
                     </div>
                      : <Search onSearch={this.onSearch}/>}
-                {/* <NavBar 
-                    loginHandleShow={this.loginHandleShow}
-                    accountSignUpShow={this.accountSignUpShow}
-                />
-                <div>
-                    {this.state.loginModalShow
-                        ? <LoginModal
-                            show={this.state.loginModalShow}
-                            onClose={this.loginHandleClose}
-                            onShow={this.loginHandleShow}
-                            accountShow={this.accountSignUpShow}
-                            onSubmit={this.loginOnSubmit}
-                            />
-                            : <></>}
-                    {this.state.signUpShow ?
-                        <SignUpModal
-                            show={this.state.signUpShow}
-                            onClose={this.accountSignUpClose}
-                            onShow={this.accountSignUpShow}
-                            onSubmit={this.accountOnSubmit}/>
-                        : <></>}
-                </div>
-                <Search
-                    onSearch={this.onSearch} */}
                 />
             </>
         );
