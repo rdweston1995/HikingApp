@@ -20,9 +20,7 @@ function navBar(props) {
             </Col>
             <Col>
                 <div className="testDiv">Help</div>
-                {/* <div className="testDiv">Login</div> */}
                 <Button className="navBarBtn loginBtn" onClick={(e) => props.loginHandleShow()}>Login</Button>
-                {/* <div className="testDiv">Sign Up</div> */}
                 <Button className="navBarBtn signUpBtn" onClick={(e) => props.accountSignUpShow()}>Sign Up</Button>
             </Col>      
         </Row>
