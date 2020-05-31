@@ -8,6 +8,7 @@ import Search from "./../../components/search/search";
 import LoginModal from "./../../components/loginModal/loginModal";
 import SignUpModal from "./../../components/accountSignUpModal/accountSignUpModal";
 import Hike from "./../../components/hikeDiv/hikeDiv";
+import ResultsSearch from "./../../components/resultsSearch/resultsSearch";
 
 //CSS
 import "./newHome.css";
@@ -83,6 +84,7 @@ class Home extends React.Component {
                 </div>
                 {this.state.searched ?
                     <div id="hikeDiv">
+                        <ResultsSearch onSearch={this.onSearch} />
                         {this.state.hikes.map(hike => 
                             <Hike
                                 className="hikeResultsDiv"
@@ -101,7 +103,7 @@ class Home extends React.Component {
                         )}
                     </div>
                      : <Search onSearch={this.onSearch}/>}
-                />
+                
             </>
         );
     };
