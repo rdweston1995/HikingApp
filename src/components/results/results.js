@@ -4,9 +4,10 @@ import React from "react";
 //CSS
 import "./results.css";
 
-function results() {
+function results(props) {
     return (
         <>
+            <div>Test</div>
         </>
     );
 }
