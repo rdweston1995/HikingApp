@@ -7,7 +7,7 @@ import "./results.css";
 function results(props) {
     return (
         <>
-            <div>Test</div>
+            <div></div>
         </>
     );
 }
