@@ -1,7 +1,7 @@
 #search {
     width: 100%;
     height: 90vh;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
 }
 
 #hikeSearchBar {
@@ -23,6 +23,7 @@
 }
 
 .searchDiv {
-    background-image: url("./../../images/homeBackground.JPG");
-    background-size: 90%;
+    /* background-image: url("./../../images/homeBackground.JPG"); */
+    /* background-size: 90%; */
+    background-color: transparent;
 }

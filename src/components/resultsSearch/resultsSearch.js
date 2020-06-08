@@ -9,7 +9,7 @@ import "./resultsSearch.css";
 
 function resultsSearch (props) {
     return(
-    <div id="resultsSearch" className="searchDiv">
+    <div id="resultsSearch" className="searchResultsDiv">
         <InputGroup id="resultsSearchBar">
             <FormControl id="resultsHikeSearch" type="text" aria-describedby="basic-addon2" placeholder="Search for another hike"/>
             <InputGroup.Append>

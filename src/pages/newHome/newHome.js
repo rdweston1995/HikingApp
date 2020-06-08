@@ -63,7 +63,7 @@ class Home extends React.Component {
 
     render() {
         return (
-            <>
+            <div className="newHome">
                 <div>
                     <NavBar 
                         loginHandleShow={this.loginHandleShow}
@@ -104,7 +104,7 @@ class Home extends React.Component {
                     </div>
                      : <Search onSearch={this.onSearch}/>}
                 
-            </>
+            </div>
         );
     };
 }
