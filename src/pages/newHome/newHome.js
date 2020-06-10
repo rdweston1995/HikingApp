@@ -25,6 +25,8 @@ class Home extends React.Component {
             searched: false
         }
     }
+
+    //Function to call the Hikes and Geocode API
     onSearch = async () => {
         if (document.getElementById('hikeSearch').value !== '') {
             let lat = '', lng = '', maxDistance = '30', maxResults = '10', minLength = '0', minStars = '0';
@@ -46,6 +48,7 @@ class Home extends React.Component {
         }
     }
 
+    //State manipulation functions for showing modals
     loginHandleClose = () => {this.setState({loginModalShow: false})}
     loginHandleShow = () => {this.setState({loginModalShow: true})}
     loginOnSubmit = () => {
@@ -61,6 +64,7 @@ class Home extends React.Component {
     }
     accountOnSubmit = () => {this.accountSignUpClose()}
 
+    //Render function
     render() {
         return (
             <div className="newHome">
