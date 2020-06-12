@@ -15,7 +15,12 @@
 .navBarBtn {
     width: 30%;
     margin: 1.5%;
-    background-color: grey;
+    background-color: #4a660e;
+    border-color: #4a660e;
+}
+
+.navBarBtn:hover, .navBarBtn:target, .navBarBtn:focus{
+    background-color: #78b000;
 }
 
 .testDiv {
