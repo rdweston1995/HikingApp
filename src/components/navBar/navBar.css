@@ -19,6 +19,7 @@
 
 .navBarBtn:hover, .navBarBtn:target, .navBarBtn:focus{
     background-color: #78b000;
+    border-color:#4a660e;
 }
 
 .testDiv {
