@@ -16,7 +16,7 @@ Hiking App (name change pending) is a personal project I've been working on. The
 *Upload modal/page
 
 ## Support
-For any issues you can reach me at robert.d.weston@gmail.com and I will help in any way I can
+For any issues you can reach me at robert.d.weston@gmail.com and I will help in any way I can.
 
 ## Contributing
 I am open to have others contribute to the project. If you have an idea you'd like to see or that you want to add feel free to reach out to me at robert.d.weston@gmail.com
