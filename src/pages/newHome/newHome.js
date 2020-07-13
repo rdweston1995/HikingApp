@@ -107,7 +107,6 @@ class Home extends React.Component {
                         )}
                     </div>
                      : <Search onSearch={this.onSearch}/>}
-                
             </div>
         );
     };
