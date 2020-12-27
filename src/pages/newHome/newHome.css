@@ -17,4 +17,7 @@
 
 .hikeResultsDiv{
     background-color: #ffffff;
+    width: 90%;
+    height: 85vh;
+    margin: 15px 5% 0px 5%;
 }
