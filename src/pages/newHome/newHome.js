@@ -1,6 +1,8 @@
 //Node imports
 import React from "react";
 // import { useHistory } from "react-router-dom";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 //Component
 import NavBar from "./../../components/navBar/navBar";
@@ -18,6 +20,9 @@ import "./newHome.css";
 import Hikes from "./../../api/hikes";
 import Geocode from "./../../api/geocode";
 
+//Test Data
+import testJSON from "./../../testJSON/testJSON";
+
 class Home extends React.Component {
     constructor(props) {
         super(props);
@@ -30,25 +35,28 @@ class Home extends React.Component {
     //Function to call the Hikes and Geocode API
     onSearch = async () => {
         if (document.getElementById('hikeSearch').value !== '') {
-            let lat = '', lng = '', maxDistance = '30', maxResults = '10', minLength = '0', minStars = '0';
+            //For Testing
+            this.setState({searched: true});
 
-            new Geocode().getLatLng(document.getElementById('hikeSearch').value).then((data) => {
-                console.log(`maxDistance ${maxDistance} | maxResults ${maxResults} | minLength ${minLength} | minStars ${minStars}`);
-                lat = data.geometry.location.lat;
-                lng = data.geometry.location.lng;
-                new Hikes().basicHikingData(lat, lng).then((returnedHikes) => {
-                    this.setState({hikes: returnedHikes});
-                    this.setState({searched: true});
-                    console.log(this.state.hikes);
-                }).catch((err) => {
-                    console.log(err);
-                });
-            }).catch((err) => {
-                console.log(err);
-            });
+            // let lat = '', lng = '', maxDistance = '30', maxResults = '10', minLength = '0', minStars = '0';
+
+            // new Geocode().getLatLng(document.getElementById('hikeSearch').value).then((data) => {
+            //     console.log(`maxDistance ${maxDistance} | maxResults ${maxResults} | minLength ${minLength} | minStars ${minStars}`);
+            //     lat = data.geometry.location.lat;
+            //     lng = data.geometry.location.lng;
+            //     new Hikes().basicHikingData(lat, lng).then((returnedHikes) => {
+            //         this.setState({hikes: returnedHikes});
+            //         this.setState({searched: true});
+            //         console.log(this.state.hikes);
+            //     }).catch((err) => {
+            //         console.log(err);
+            //     });
+            // }).catch((err) => {
+            //     console.log(err);
+            // });
         }
     }
-
+ 
     //State manipulation functions for showing modals
     loginHandleClose = () => {this.setState({loginModalShow: false})}
     loginHandleShow = () => {this.setState({loginModalShow: true})}
@@ -89,11 +97,37 @@ class Home extends React.Component {
                 </div>
                 {this.state.searched ?
                     <div id="hikeDiv">
-                        <HikeResults 
+                        <Row>
+                            <Col>
+                            {testJSON.map(hike => 
+                                    <div className="hikeResultsDiv">
+                                        <HikeResults 
+                                            className="hikeNameResults"
+                                            name={hike.name}
+                                            location={hike.location}
+                                            key={hike.id}
+                                        />
+                                    </div>
+                            )}
+                            </Col>
+                        {/* {this.state.hikes.map(hike => 
+                            <Col>
+                                <div className="hikeResultsDiv">
+                                    <HikeResults
+                                        className="hikeNameResults"
+                                        name={hike.name}
+                                        location={hike.location}
+                                        key={hike.name} />    
+                                </div>
+                            </Col>
+                        )} */}
+                        </Row>
+                        {/* <HikeResults 
                             className="hikeResultsDiv"
                             hikes={this.state.hikes}
-                            key={1}/>
-                        />
+                            key={1}
+                        /> */}
+                        
                         {/* <ResultsSearch onSearch={this.onSearch} />
                         {this.state.hikes.map(hike => 
                             <Hike

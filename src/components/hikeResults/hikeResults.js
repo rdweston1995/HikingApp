@@ -7,21 +7,10 @@ import "./hikeResults.css";
 
 function hikeResults(props) {
     return(
-        <Row className={props.className}>
-            {props.hikes.map(hike => 
-                <Row>
-                    <Col><p>{hike.name}</p></Col>
-                    <Col><p>{hike.location}</p></Col>
-                </Row>)}
-            {/* <Col>
-                {props.hikes.map(hike => 
-                    <p>{hike.name}</p>)}
-            </Col>
-            <Col>
-                {props.hikes.map(hike => 
-                    <p>{hike.location}</p>)}
-            </Col> */}
-        </Row>
+        <div>
+            <p>{props.name}</p>
+            <p>{props.location}</p>
+        </div>
     );
 }
 
