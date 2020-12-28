@@ -12,6 +12,7 @@ import SignUpModal from "./../../components/accountSignUpModal/accountSignUpModa
 import Hike from "./../../components/hikeDiv/hikeDiv";
 import ResultsSearch from "./../../components/resultsSearch/resultsSearch";
 import HikeResults from "./../../components/hikeResults/hikeResults";
+import HikeInfo from "./../../components/hikeInfo/hikeInfo";
 
 //CSS
 import "./newHome.css";
@@ -28,6 +29,7 @@ class Home extends React.Component {
         super(props);
         this.state = {
             hikes: [],
+            displayedHike: testJSON[0],
             searched: false
         }
     }
@@ -73,6 +75,11 @@ class Home extends React.Component {
     }
     accountOnSubmit = () => {this.accountSignUpClose()}
 
+    hikeOnClick = (hike) => {
+        this.setState({displayedHike: hike});
+        console.log(this.state.displayedHike);
+    }
+
     //Render function
     render() {
         return (
@@ -100,22 +107,30 @@ class Home extends React.Component {
                         <Row className="hikeResultsDiv">
                             <Col>
                             {testJSON.map(hike => 
-                            
-                                    
-                                        <HikeResults 
-                                            className="hikeNameResults"
-                                            name={hike.name}
-                                            location={hike.location}
-                                            key={hike.id}
-                                        />
-                                    
-                            
+                                <HikeResults 
+                                    className="hikeNameResults"
+                                    name={hike.name}
+                                    location={hike.location}
+                                    onClick={() => this.hikeOnClick(hike)}
+                                    key={hike.id}
+                                />    
                             )}
                             </Col>
                             <Col>
-                                <p>
-                                    Test
-                                </p>
+                                <HikeInfo
+                                    name={this.state.displayedHike.name}
+                                    location={this.state.displayedHike.location}
+                                    difficulty={this.state.displayedHike.difficulty}
+                                    low={this.state.displayedHike.low}
+                                    high={this.state.displayedHike.high}
+                                    length={this.state.displayedHike.length}
+                                    stars={this.state.displayedHike.stars}
+                                    summary={this.state.displayedHike.summary}
+                                    url={this.state.displayedHike.url}
+                                    conditionDate={this.state.displayedHike.conditionDate}
+                                    conditionDetails={this.state.displayedHike.conditionDetails}
+                                    conditionStatus={this.state.displayedHike.conditionStatus}
+                                    />
                             </Col>
                         {/* {this.state.hikes.map(hike => 
                             <Col>
