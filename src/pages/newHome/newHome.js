@@ -101,14 +101,14 @@ class Home extends React.Component {
                             <Col>
                             {testJSON.map(hike => 
                             
-                                    <div>
+                                    
                                         <HikeResults 
                                             className="hikeNameResults"
                                             name={hike.name}
                                             location={hike.location}
                                             key={hike.id}
                                         />
-                                    </div>
+                                    
                             
                             )}
                             </Col>
