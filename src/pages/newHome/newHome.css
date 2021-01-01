@@ -20,4 +20,10 @@
     width: 90%;
     height: 85vh;
     margin: 15px 5% 0px 5%;
+    padding: 2px;
+}
+
+.hikeInfoCol {
+    margin: 0;
+    padding: 0;
 }

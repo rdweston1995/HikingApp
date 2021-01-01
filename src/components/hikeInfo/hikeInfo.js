@@ -4,7 +4,7 @@ import "./hikeInfo.css";
 
 function hikeInfo(props) {
     return(
-        <div>
+        <div className="hikeInfo">
             <p>{props.name}</p>
             <p>{props.location}</p>
             <p>{props.difficulty}</p>
