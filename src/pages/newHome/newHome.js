@@ -117,20 +117,7 @@ class Home extends React.Component {
                             )}
                             </Col>
                             <Col xs lg="10" className="hikeInfoCol">
-                                <HikeInfo
-                                    name={this.state.displayedHike.name}
-                                    location={this.state.displayedHike.location}
-                                    difficulty={this.state.displayedHike.difficulty}
-                                    low={this.state.displayedHike.low}
-                                    high={this.state.displayedHike.high}
-                                    length={this.state.displayedHike.length}
-                                    stars={this.state.displayedHike.stars}
-                                    summary={this.state.displayedHike.summary}
-                                    url={this.state.displayedHike.url}
-                                    conditionDate={this.state.displayedHike.conditionDate}
-                                    conditionDetails={this.state.displayedHike.conditionDetails}
-                                    conditionStatus={this.state.displayedHike.conditionStatus}
-                                    />
+                                <HikeInfo hike={this.state.displayedHike} />
                             </Col>
                         {/* {this.state.hikes.map(hike => 
                             <Col>

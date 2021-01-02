@@ -5,17 +5,17 @@ import "./hikeInfo.css";
 function hikeInfo(props) {
     return(
         <div className="hikeInfo">
-            <p>{props.name}</p>
-            <p>{props.location}</p>
-            <p>{props.difficulty}</p>
-            <p>{props.low} - {props.high}</p>
-            <p>{props.length}</p>
-            <p>{props.stars}</p>
-            <p>{props.summary}</p>
-            <p>{props.url}</p>
-            <p>{props.conditionDate}</p>
-            <p>{props.conditionDetails}</p>
-            <p>{props.conditionStatus}</p>
+            <p>{props.hike.name}</p>
+            <p>{props.hike.location}</p>
+            <p>{props.hike.difficulty}</p>
+            <p>{props.hike.low} - {props.hike.high}</p>
+            <p>{props.hike.length}</p>
+            <p>{props.hike.stars}</p>
+            <p>{props.hike.summary}</p>
+            <p>{props.hike.url}</p>
+            <p>{props.hike.conditionDate}</p>
+            <p>{props.hike.conditionDetails}</p>
+            <p>{props.hike.conditionStatus}</p>
         </div>
     );
 };
