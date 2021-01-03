@@ -7,9 +7,9 @@ import "./hikeResults.css";
 
 function hikeResults(props) {
     return(
-        <div onClick={props.onClick}>
-            <p>{props.name}</p>
-            <p>{props.location}</p>
+        <div className="hikeResultsNameDiv" onClick={props.onClick}>
+            <p className="hikeResultsName">{props.name}</p>
+            <p className="hikeResultsLocation">{props.location}</p>
         </div>
     );
 }
