@@ -31,11 +31,12 @@
     /* overflow: scroll; */
     /* overflow: hidden; */
     overflow:auto;
-    height: 85vh;
+    height: 84.5vh;
 }
 
 .hikeInfoCol {
     margin: 0;
     padding: 0;
     height: 85vh;
+    overflow:auto;
 }
