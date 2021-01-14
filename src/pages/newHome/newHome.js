@@ -105,7 +105,7 @@ class Home extends React.Component {
                 {this.state.searched ?
                     <div id="hikeDiv">
                         <Row className="hikeResultsDiv">
-                            <Col xs lg="2" className="hikeNameCol">
+                            <Col xs lg="3" className="hikeNameCol">
                             {testJSON.map(hike => 
                                 <HikeResults 
                                     className="hikeNameResults"
@@ -116,7 +116,7 @@ class Home extends React.Component {
                                 />    
                             )}
                             </Col>
-                            <Col xs lg="10" className="hikeInfoCol">
+                            <Col xs lg="9" className="hikeInfoCol">
                                 <HikeInfo hike={this.state.displayedHike} />
                             </Col>
                         {/* {this.state.hikes.map(hike => 

@@ -17,9 +17,9 @@
 
 .hikeResultsDiv{
     background-color: #ffffff;
-    width: 90%;
+    width: 75%;
     height: 85vh;
-    margin: 15px 5% 0px 5%;
+    margin: 15px 12.5% 0px 12.5%;
     padding: 2px;
     /* overflow:scroll; */
     /* overflow:hidden; */
@@ -32,6 +32,8 @@
     /* overflow: hidden; */
     overflow:auto;
     height: 84.75vh;
+    margin: 0;
+    padding: 0;
 }
 
 .hikeInfoCol {

@@ -1,8 +1,21 @@
 .hikeResultsNameDiv {
     /* background-color: #ffffff; */
-    
+    width: 100%;
 }
 
 .hikeResultsName {
-    /* box-shadow: 0px 0px 10px #000000; */
+    font-size: 1.75em;
+    margin-bottom: 0px;
 }
+
+.hikeResultsLocation {
+    font-size: 1em;
+    margin-top: 0px;
+    color: grey;
+}
+
+.hikeResultsNameDiv:hover {
+    box-shadow: 2px 2px 2px 2px #000000;
+    background-color: lightgrey;
+}
+
