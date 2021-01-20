@@ -1,6 +1,7 @@
 .hikeResultsNameDiv {
     /* background-color: #ffffff; */
     width: 100%;
+    margin-top: 10px;
 }
 
 .hikeResultsName {
@@ -12,6 +13,7 @@
     font-size: 1em;
     margin-top: 0px;
     color: grey;
+    margin-bottom: 0px;
 }
 
 .hikeResultsNameDiv:hover {

@@ -118,42 +118,8 @@ class Home extends React.Component {
                             </Col>
                             <Col xs lg="9" className="hikeInfoCol">
                                 <HikeInfo hike={this.state.displayedHike} />
-                            </Col>
-                        {/* {this.state.hikes.map(hike => 
-                            <Col>
-                                <div className="hikeResultsDiv">
-                                    <HikeResults
-                                        className="hikeNameResults"
-                                        name={hike.name}
-                                        location={hike.location}
-                                        key={hike.name} />    
-                                </div>
-                            </Col>
-                        )} */}
+                            </Col> 
                         </Row>
-                        {/* <HikeResults 
-                            className="hikeResultsDiv"
-                            hikes={this.state.hikes}
-                            key={1}
-                        /> */}
-                        
-                        {/* <ResultsSearch onSearch={this.onSearch} />
-                        {this.state.hikes.map(hike => 
-                            <Hike
-                                className="hikeResultsDiv"
-                                name={hike.name}
-                                summary={hike.summary}
-                                imgSmall={hike.imgSmall}
-                                high={hike.high}
-                                low={hike.low}
-                                ascent={hike.ascent}
-                                location={hike.location}
-                                length={hike.length}
-                                stars={hike.stars}
-                                url={hike.url}
-                                difficulty={hike.difficulty}
-                                key={hike.name} />
-                        )} */}
                     </div>
                      : <Search onSearch={this.onSearch}/>}
             </div>
