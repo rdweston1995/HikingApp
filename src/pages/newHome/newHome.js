@@ -30,7 +30,8 @@ class Home extends React.Component {
         this.state = {
             hikes: [],
             displayedHike: testJSON[0],
-            searched: false
+            searched: false,
+            tipsDisplay: false
         }
     }
 
@@ -40,6 +41,7 @@ class Home extends React.Component {
             //For Testing
             this.setState({searched: true});
 
+            //DO NOT DELETE
             // let lat = '', lng = '', maxDistance = '30', maxResults = '10', minLength = '0', minStars = '0';
 
             // new Geocode().getLatLng(document.getElementById('hikeSearch').value).then((data) => {
@@ -75,9 +77,16 @@ class Home extends React.Component {
     }
     accountOnSubmit = () => {this.accountSignUpClose()}
 
+    /** State manipulation to change the displayed hike on results page */
     hikeOnClick = (hike) => {
         this.setState({displayedHike: hike});
         console.log(this.state.displayedHike);
+    }
+
+    /** Not sure yet */
+    tipsOnClick = () => {
+        this.setState({tipsDisplay: true});
+        console.log(this.state.tipsDisplay);
     }
 
     //Render function
@@ -85,9 +94,11 @@ class Home extends React.Component {
         return (
             <div className="newHome">
                 <div>
+                    /** NavBar component and state handlers for login/singUp */
                     <NavBar 
                         loginHandleShow={this.loginHandleShow}
-                        accountSignUpShow={this.accountSignUpShow}/>
+                        accountSignUpShow={this.accountSignUpShow}
+                        tipsOpen={this.tipsOnClick}/>
                     {this.state.loginModalShow
                         ? <LoginModal
                             show={this.state.loginModalShow}
@@ -102,6 +113,7 @@ class Home extends React.Component {
                             onShow={this.accountSignUpShow}
                             onSubmit={this.accountOnSubmit}/> : <></>}
                 </div>
+                /** State handler for homepage to switch between search bar and results */
                 {this.state.searched ?
                     <div id="hikeDiv">
                         <Row className="hikeResultsDiv">
