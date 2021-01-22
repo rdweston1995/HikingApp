@@ -22,7 +22,18 @@
     border-color:#4a660e;
 }
 
-.testDiv {
+.navBarTag{
     width: 33%;
     float: left;
+}
+
+.tagExplore, .tagPlan, .tagTips {
+    font-size: 1.25em;
+    margin: 3% 0 0 0;
+}
+
+.tagHelp {
+    font-size: 1.25em;
+    margin: 3% 0 0 0;
+    /* width: 15%; */
 }

@@ -94,7 +94,6 @@ class Home extends React.Component {
         return (
             <div className="newHome">
                 <div>
-                    /** NavBar component and state handlers for login/singUp */
                     <NavBar 
                         loginHandleShow={this.loginHandleShow}
                         accountSignUpShow={this.accountSignUpShow}
@@ -113,7 +112,6 @@ class Home extends React.Component {
                             onShow={this.accountSignUpShow}
                             onSubmit={this.accountOnSubmit}/> : <></>}
                 </div>
-                /** State handler for homepage to switch between search bar and results */
                 {this.state.searched ?
                     <div id="hikeDiv">
                         <Row className="hikeResultsDiv">
