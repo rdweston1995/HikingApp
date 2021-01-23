@@ -29,11 +29,17 @@
 
 .tagExplore, .tagPlan, .tagTips {
     font-size: 1.25em;
-    margin: 3% 0 0 0;
+    margin: 2% 0 0 0;
 }
 
 .tagHelp {
     font-size: 1.25em;
-    margin: 3% 0 0 0;
+    margin: 2% 10px 0 0;
+    text-align: right;
+    width: 25%;
     /* width: 15%; */
+}
+
+.navBarLogoDiv {
+    font-size: 1.5em;
 }
