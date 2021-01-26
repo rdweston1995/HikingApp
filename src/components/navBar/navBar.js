@@ -17,7 +17,7 @@ function navBar(props) {
                 <div className="navBarTag tagTips" onClick={() => props.history.push('/tips')}>Tips</div>
             </Col>
             <Col xs={6} className="navBarLogo">
-                <div className="navBarLogoDiv" onClick={() => props.history.push('/')}>Hiking App</div>
+                <h1 className="navBarLogoDiv" onClick={() => props.history.push('/')}>Hiking App</h1>
             </Col>
             <Col>
                 <div className="navBarTag tagHelp">Help</div>

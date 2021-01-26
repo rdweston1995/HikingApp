@@ -87,6 +87,12 @@ class Home extends React.Component {
     }
 
     //Render function
+    /**
+     * Change routing for results page to acutally not just be the home page
+     * Change the css for the seach button
+     * Change the background to change according to season or month
+     * Go take more pictures for backgrounds
+     */
     render() {
         return (
             <div className="newHome">
@@ -110,6 +116,7 @@ class Home extends React.Component {
                             onShow={this.accountSignUpShow}
                             onSubmit={this.accountOnSubmit}/> : <></>}
                 </div>
+                
                 {this.state.searched ?
                     <div id="hikeDiv">
                         <Row className="hikeResultsDiv">
