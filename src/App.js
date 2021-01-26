@@ -24,8 +24,10 @@ class App extends React.Component {
                     <Route exact path="/map" component={Map} />
                     <Route exact path="/account" component={Account} />
                     <Route exact path="/tips" component={Tips} />
-                    <Route exact path="/hike" component={Hike} />
+                    {/* <Route exact path="/hike" component={Hike} /> */}
                     <Route exact path="/results" component={Results} />
+                    <Route exact path="/explore" component={Tips} />
+                    <Route exact path="/plan" component={Tips} />
                     <Route component={Home} />
                 </Switch>
             </Router>

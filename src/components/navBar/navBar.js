@@ -3,6 +3,7 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
+import {withRouter} from "react-router-dom";
 
 //CSS
 import "./navBar.css";
@@ -11,9 +12,9 @@ function navBar(props) {
     return(
         <Row id="navBar" className="navBar">
             <Col className="colLeft">
-                <div className="navBarTag tagExplore">Explore</div>
-                <div className="navBarTag tagPlan">Plan</div>
-                <div className="navBarTag tagTips">Tips</div>
+                <div className="navBarTag tagExplore" onClick={() => props.history.push('/explore')}>Explore</div>
+                <div className="navBarTag tagPlan" onClick={() => props.history.push('/plan')}>Plan</div>
+                <div className="navBarTag tagTips" onClick={() => props.history.push('/tips')}>Tips</div>
             </Col>
             <Col xs={6} className="navBarLogo">
                 <div className="navBarLogoDiv">Hiking App</div>
@@ -27,4 +28,4 @@ function navBar(props) {
     );
 }
 
-export default navBar;
+export default withRouter(navBar);

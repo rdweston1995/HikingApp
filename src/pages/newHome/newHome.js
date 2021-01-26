@@ -31,7 +31,8 @@ class Home extends React.Component {
             hikes: [],
             displayedHike: testJSON[0],
             searched: false,
-            tipsDisplay: false
+            tipsDisplay: false,
+            history: ''
         }
     }
 
@@ -97,6 +98,7 @@ class Home extends React.Component {
                     <NavBar 
                         loginHandleShow={this.loginHandleShow}
                         accountSignUpShow={this.accountSignUpShow}
+                        history={this.state.history}
                         tipsOpen={this.tipsOnClick}/>
                     {this.state.loginModalShow
                         ? <LoginModal
