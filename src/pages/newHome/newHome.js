@@ -25,6 +25,8 @@ import Geocode from "./../../api/geocode";
 import testJSON from "./../../testJSON/testJSON";
 
 class Home extends React.Component {
+    //For testing
+    //displayedHike: testJSON[0]
     constructor(props) {
         super(props);
         this.state = {
@@ -82,12 +84,6 @@ class Home extends React.Component {
     hikeOnClick = (hike) => {
         this.setState({displayedHike: hike});
         console.log(this.state.displayedHike);
-    }
-
-    /** Not sure yet */
-    tipsOnClick = () => {
-        this.setState({tipsDisplay: true});
-        console.log(this.state.tipsDisplay);
     }
 
     //Render function

@@ -1,5 +1,7 @@
+//Node Imports
 import React from "react";
 
+//CSS
 import "./hikeInfo.css";
 
 function hikeInfo(props) {
