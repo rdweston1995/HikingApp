@@ -9,9 +9,11 @@ import "./tips.css";
 class Tips extends React.Component {
     render() {
         return (
-            <div>
-                {/* <p>Test Tips Page</p> */}
+            <div id="tipsPage">
                 <NavBar />
+                <div id="tipsDiv">
+                    <p>testtest</p>
+                </div>
             </div>
         )
     }
