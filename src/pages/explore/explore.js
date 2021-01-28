@@ -1,7 +1,7 @@
 //Node Imports
 import React from "react";
 
-import navBar from "./../../components/navBar/navBar";
+import NavBar from "./../../components/navBar/navBar";
 
 //CSS
 import "./explore.css";
@@ -9,9 +9,11 @@ import "./explore.css";
 class Explore extends React.Component {
     render() {
         return (
-            <div>
+            <div id="explorePage">
                 <NavBar />
-               
+                <div id="exploreDiv">
+                    <p>testExplore</p>
+                </div>
             </div>
         )
     }
