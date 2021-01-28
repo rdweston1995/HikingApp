@@ -13,6 +13,7 @@ import Account from "./pages/account/account";
 import Tips from "./pages/tips/tips";
 import Hike from "./pages/hike/hike";
 import Results from "./pages/results/results";
+import Plan from "./pages/plan/plan";
 
 
 class App extends React.Component {
@@ -27,7 +28,7 @@ class App extends React.Component {
                     {/* <Route exact path="/hike" component={Hike} /> */}
                     <Route exact path="/results" component={Results} />
                     <Route exact path="/explore" component={Tips} />
-                    <Route exact path="/plan" component={Tips} />
+                    <Route exact path="/plan" component={Plan} />
                     <Route component={Home} />
                 </Switch>
             </Router>

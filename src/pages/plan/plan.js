@@ -1,7 +1,7 @@
 //Node Imports
 import React from "react";
 
-import navBar from "./../../components/navBar/navBar";
+import NavBar from "./../../components/navBar/navBar";
 
 //CSS
 import "./plan.css";
@@ -9,8 +9,11 @@ import "./plan.css";
 class Plan extends React.Component {
     render() {
         return (
-            <div>
+            <div id="planPage">
                 <NavBar />
+                <div id="planDiv">
+                    <p>testPlan</p>
+                </div>
             </div>
         )
     }
