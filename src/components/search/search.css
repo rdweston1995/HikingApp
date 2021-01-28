@@ -20,6 +20,12 @@
 #searchButton {
     width: 15vh;
     background-color: #ffffff;
+    color: black;  
+}
+
+#searchButton:hover{
+    color: grey;
+    background-color: #e3e3e3;
 }
 
 .searchDiv {
