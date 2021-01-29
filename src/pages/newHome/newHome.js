@@ -93,6 +93,8 @@ class Home extends React.Component {
      * Change the css for the seach button
      * Change the background to change according to season or month
      * Go take more pictures for backgrounds
+     * Start learning postgreSQL db and find a cloud provider
+     * Build user creation and profiles
      */
     render() {
         return (
