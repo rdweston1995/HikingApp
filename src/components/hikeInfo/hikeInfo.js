@@ -12,6 +12,8 @@ function hikeInfo(props) {
      * Overall change everything lets be real
      * Figure out picture display thats not even passed as a prop currently
      * Line up h2 and h3 for whatever reason they are not in line ocd triggering
+     * link to google maps with the lat and long provided
+     * Provide the weather at trail head
      */
     return(
         <div className="hikeInfo">
@@ -21,6 +23,7 @@ function hikeInfo(props) {
                 <p className="hikeInfoDiff">{props.hike.difficulty}</p>
                 <p className="hikeInfoLeng">{props.hike.length} miles</p>
                 <p className="hikeInfoAscent">Low: {props.hike.low}ft - High: {props.hike.high}ft</p>
+                <p className="hikeInfoAscent">{props.hike.ascent}</p>
                 <p className="hikeInfoStars">{props.hike.stars} / 5 stars</p>
                 <p>Most recent trip reports</p>
                 <p className="hikeInfoDate">{props.hike.conditionDate}</p>

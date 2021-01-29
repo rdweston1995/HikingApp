@@ -95,6 +95,7 @@ class Home extends React.Component {
      * Go take more pictures for backgrounds
      * Start learning postgreSQL db and find a cloud provider
      * Build user creation and profiles
+     * Add options to specify? search
      */
     render() {
         return (
@@ -124,6 +125,7 @@ class Home extends React.Component {
                     <div id="hikeDiv">
                         <Row className="hikeResultsDiv">
                             <Col xs lg="3" className="hikeNameCol">
+
                             {testJSON.map(hike => 
                                 <HikeResults 
                                     className="hikeNameResults"
