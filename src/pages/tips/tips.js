@@ -12,7 +12,7 @@ class Tips extends React.Component {
             <div id="tipsPage">
                 <NavBar />
                 <div id="tipsDiv">
-                    <p>testtest</p>
+                    <p className="comingSoon">Coming Soon</p>
                 </div>
             </div>
         )

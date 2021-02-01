@@ -12,7 +12,7 @@ class Plan extends React.Component {
             <div id="planPage">
                 <NavBar />
                 <div id="planDiv">
-                    <p>testPlan</p>
+                    <p className="comingSoon">Coming Soon</p>
                 </div>
             </div>
         )

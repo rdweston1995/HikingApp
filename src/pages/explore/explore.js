@@ -12,7 +12,7 @@ class Explore extends React.Component {
             <div id="explorePage">
                 <NavBar />
                 <div id="exploreDiv">
-                    <p>testExplore</p>
+                    <p className="comingSoon">Coming Soon</p>
                 </div>
             </div>
         )
