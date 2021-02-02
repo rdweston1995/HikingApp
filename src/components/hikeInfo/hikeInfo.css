@@ -24,4 +24,15 @@
     float:left;
 }
 
+.testDiv1{
+    width: 60%;
+    float:left;
+}
+
+.testDiv2{
+    width: 40%;
+    float:right;
+    text-align: right;
+}
+
 

@@ -17,7 +17,7 @@ function hikeInfo(props) {
      */
     return(
         <div className="hikeInfo">
-            <h2 className="hikeInfoName">{props.hike.name}</h2>
+            {/* <h2 className="hikeInfoName">{props.hike.name}</h2>
             <h3 className="hikeInfoLoc">{props.hike.location}</h3>
             <div className="hikeStats">
                 <p className="hikeInfoDiff">{props.hike.difficulty}</p>
@@ -32,7 +32,25 @@ function hikeInfo(props) {
             </div>
             <p className="hikeInfoSum">{props.hike.summary}</p>
             <a className="hikeInfoUrl" href={props.hike.url} target="_blank" rel="noopener noreferrer">HikingProject hike page</a>
-            
+            <img src={props.hike.imgSmallMed} alt="Photo of the hike"/> */}
+            <div className="testDiv1">
+                <h2 className="hikeInfoName">{props.hike.name}</h2>
+                <h3 className="hikeInfoLoc">{props.hike.location}</h3>
+                <div className="hikeStats">
+                    <p className="hikeInfoDiff">{props.hike.difficulty}</p>
+                    <p className="hikeInfoLeng">{props.hike.length} miles</p>
+                    <p className="hikeInfoAscent">Low: {props.hike.low}ft - High: {props.hike.high}ft</p>
+                    <p className="hikeInfoAscent">{props.hike.ascent}</p>
+                    <p className="hikeInfoStars">{props.hike.stars} / 5 stars</p>
+                </div>
+            </div>
+            <div className="testDiv2">
+                <img src={props.hike.imgSmallMed} alt="Photo" height="75%" onClick={() => props.imgClick()}/>
+            </div>
+            <div className="testDiv3">
+                <p className="hikeInfoSum">{props.hike.summary}</p>
+                <a className="hikeInfoUrl" href={props.hike.url} target="_blank" rel="noopener noreferrer">HikingProject hike page</a>  
+            </div>
         </div>
     );
 };

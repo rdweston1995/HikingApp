@@ -9,6 +9,7 @@ import NavBar from "./../../components/navBar/navBar";
 import Search from "./../../components/search/search";
 import LoginModal from "./../../components/loginModal/loginModal";
 import SignUpModal from "./../../components/accountSignUpModal/accountSignUpModal";
+import ImageModal from "./../../components/imageModal/imageModal";
 import Hike from "./../../components/hikeDiv/hikeDiv";
 import ResultsSearch from "./../../components/resultsSearch/resultsSearch";
 import HikeResults from "./../../components/hikeResults/hikeResults";
@@ -32,6 +33,8 @@ class Home extends React.Component {
         this.state = {
             hikes: [],
             displayedHike: testJSON[0],
+            displayedHikeBigImg: testJSON[0].imgMedium,
+            displayBigImg: false,
             searched: false,
             tipsDisplay: false,
             history: ''
@@ -84,8 +87,12 @@ class Home extends React.Component {
     /** State manipulation to change the displayed hike on results page */
     hikeOnClick = (hike) => {
         this.setState({displayedHike: hike});
+        this.setState({displayedHikeBigImg: hike.imgMedium});
         console.log(this.state.displayedHike);
     }
+
+    hikeImgClose = () => {this.setState({displayBigImg: false})}
+    hikeImgShow = () => {this.setState({displayBigImg: true})}
 
     //Render function
     /**
@@ -119,6 +126,12 @@ class Home extends React.Component {
                             onClose={this.accountSignUpClose}
                             onShow={this.accountSignUpShow}
                             onSubmit={this.accountOnSubmit}/> : <></>}
+                    {this.state.displayBigImg
+                        ? <ImageModal
+                            show={this.state.displayBigImg}
+                            onClose={this.hikeImgClose}
+                            onShow={this.hikeImgShow}
+                            image={this.state.displayedHikeBigImg} /> : <></>}
                 </div>
                 
                 {this.state.searched ?
@@ -137,7 +150,7 @@ class Home extends React.Component {
                             )}
                             </Col>
                             <Col xs lg="9" className="hikeInfoCol">
-                                <HikeInfo hike={this.state.displayedHike} />
+                                <HikeInfo hike={this.state.displayedHike} imgClick={this.hikeImgShow} />
                             </Col> 
                         </Row>
                     </div>
