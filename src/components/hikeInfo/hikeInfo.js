@@ -1,5 +1,7 @@
 //Node Imports
 import React from "react";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 //CSS
 import "./hikeInfo.css";
@@ -33,21 +35,26 @@ function hikeInfo(props) {
             <p className="hikeInfoSum">{props.hike.summary}</p>
             <a className="hikeInfoUrl" href={props.hike.url} target="_blank" rel="noopener noreferrer">HikingProject hike page</a>
             <img src={props.hike.imgSmallMed} alt="Photo of the hike"/> */}
-            <div className="testDiv1">
+            <div className="hikeBasicInfo">
                 <h2 className="hikeInfoName">{props.hike.name}</h2>
                 <h3 className="hikeInfoLoc">{props.hike.location}</h3>
                 <div className="hikeStats">
-                    <p className="hikeInfoDiff">{props.hike.difficulty}</p>
-                    <p className="hikeInfoLeng">{props.hike.length} miles</p>
-                    <p className="hikeInfoAscent">Low: {props.hike.low}ft - High: {props.hike.high}ft</p>
-                    <p className="hikeInfoAscent">{props.hike.ascent}</p>
-                    <p className="hikeInfoStars">{props.hike.stars} / 5 stars</p>
+                    <Row>
+                        <p className="hikeInfoDiff">{props.hike.difficulty}</p>
+                        <p className="hikeInfoStars">{props.hike.stars} / 5 stars</p>
+                    </Row>
+                    <Row>
+                        <p className="hikeInfoLeng">{props.hike.length} miles</p>
+                        <p className="hikeInfoAscent">Ascent: {props.hike.ascent}</p>
+                        <p className="hikeInfoAscent">Low: {props.hike.low}ft - High: {props.hike.high}ft</p>
+                    </Row>
                 </div>
             </div>
-            <div className="testDiv2">
+            <div className="hikeImgSmll">
                 <img src={props.hike.imgSmallMed} alt="Photo" height="75%" onClick={() => props.imgClick()}/>
             </div>
-            <div className="testDiv3">
+            <div className="hikeSummary">
+                <p className="asdasdsa">Description: </p>
                 <p className="hikeInfoSum">{props.hike.summary}</p>
                 <a className="hikeInfoUrl" href={props.hike.url} target="_blank" rel="noopener noreferrer">HikingProject hike page</a>  
             </div>

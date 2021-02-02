@@ -20,19 +20,27 @@
 }
 
 .hikeInfoAscent, .hikeInfoLeng{
-    width: 20%;
+    width: 33%;
     float:left;
 }
 
-.testDiv1{
+.hikeBasicInfo{
     width: 60%;
     float:left;
 }
 
-.testDiv2{
+.hikeImgSmll{
     width: 40%;
     float:right;
     text-align: right;
+}
+
+.hikeInfoSum{
+    font-size: 1.5em;
+}
+
+.hikeInfoUrl{
+    font-size: 0.75em;
 }
 
 
