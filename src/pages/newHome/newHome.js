@@ -45,25 +45,25 @@ class Home extends React.Component {
     onSearch = async () => {
         if (document.getElementById('hikeSearch').value !== '') {
             //For Testing
-            // this.setState({searched: true});
+            this.setState({searched: true});
 
             //DO NOT DELETE
-            let lat = '', lng = '', maxDistance = '30', maxResults = '10', minLength = '0', minStars = '0';
+            // let lat = '', lng = '', maxDistance = '30', maxResults = '10', minLength = '0', minStars = '0';
 
-            Geocode(document.getElementById('hikeSearch').value).then((data) => {
-                console.log(`maxDistance ${maxDistance} | maxResults ${maxResults} | minLength ${minLength} | minStars ${minStars}`);
-                lat = data.geometry.location.lat;
-                lng = data.geometry.location.lng;
-                Hikes(lat, lng).then((returnedHikes) => {
-                    this.setState({hikes: returnedHikes});
-                    this.setState({searched: true});
-                    console.log(this.state.hikes);
-                }).catch((err) => {
-                    console.log(err);
-                });
-            }).catch((err) => {
-                console.log(err);
-            });
+            // Geocode(document.getElementById('hikeSearch').value).then((data) => {
+            //     console.log(`maxDistance ${maxDistance} | maxResults ${maxResults} | minLength ${minLength} | minStars ${minStars}`);
+            //     lat = data.geometry.location.lat;
+            //     lng = data.geometry.location.lng;
+            //     Hikes(lat, lng).then((returnedHikes) => {
+            //         this.setState({hikes: returnedHikes});
+            //         this.setState({searched: true});
+            //         console.log(this.state.hikes);
+            //     }).catch((err) => {
+            //         console.log(err);
+            //     });
+            // }).catch((err) => {
+            //     console.log(err);
+            // });
             
         }
     }
@@ -97,7 +97,6 @@ class Home extends React.Component {
     //Render function
     /**
      * Change routing for results page to acutally not just be the home page
-     * Change the css for the seach button
      * Change the background to change according to season or month
      * Go take more pictures for backgrounds
      * Start learning postgreSQL db and find a cloud provider
@@ -138,15 +137,14 @@ class Home extends React.Component {
                     <div id="hikeDiv">
                         <Row className="hikeResultsDiv">
                             <Col xs lg="3" className="hikeNameCol">
-
-                            {this.state.hikes.map(hike => 
-                                <HikeResults 
-                                    className="hikeNameResults"
-                                    name={hike.name}
-                                    location={hike.location}
-                                    onClick={() => this.hikeOnClick(hike)}
-                                    key={hike.id}
-                                />    
+                                {testJSON.map(hike => 
+                                    <HikeResults 
+                                        className="hikeNameResults"
+                                        name={hike.name}
+                                        location={hike.location}
+                                        onClick={() => this.hikeOnClick(hike)}
+                                        key={hike.id}
+                                    />    
                             )}
                             </Col>
                             <Col xs lg="9" className="hikeInfoCol">
