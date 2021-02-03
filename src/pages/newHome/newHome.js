@@ -10,8 +10,8 @@ import Search from "./../../components/search/search";
 import LoginModal from "./../../components/loginModal/loginModal";
 import SignUpModal from "./../../components/accountSignUpModal/accountSignUpModal";
 import ImageModal from "./../../components/imageModal/imageModal";
-// import Hike from "./../../components/hikeDiv/hikeDiv";
-// import ResultsSearch from "./../../components/resultsSearch/resultsSearch";
+import Hike from "./../../components/hikeDiv/hikeDiv";
+import ResultsSearch from "./../../components/resultsSearch/resultsSearch";
 import HikeResults from "./../../components/hikeResults/hikeResults";
 import HikeInfo from "./../../components/hikeInfo/hikeInfo";
 
@@ -28,12 +28,13 @@ import testJSON from "./../../testJSON/testJSON";
 class Home extends React.Component {
     //For testing
     //displayedHike: testJSON[0]
+    //displayedHikeBigImg: testJSON[0].imgMedium
     constructor(props) {
         super(props);
         this.state = {
             hikes: [],
-            displayedHike: testJSON[0],
-            displayedHikeBigImg: testJSON[0].imgMedium,
+            displayedHike: {},
+            displayedHikeBigImg: "",
             displayBigImg: false,
             searched: false,
             tipsDisplay: false,
@@ -45,25 +46,27 @@ class Home extends React.Component {
     onSearch = async () => {
         if (document.getElementById('hikeSearch').value !== '') {
             //For Testing
-            this.setState({searched: true});
+            // this.setState({searched: true});
 
             //DO NOT DELETE
-            // let lat = '', lng = '', maxDistance = '30', maxResults = '10', minLength = '0', minStars = '0';
+            let lat = '', lng = '', maxDistance = '30', maxResults = '10', minLength = '0', minStars = '0';
 
-            // Geocode(document.getElementById('hikeSearch').value).then((data) => {
-            //     console.log(`maxDistance ${maxDistance} | maxResults ${maxResults} | minLength ${minLength} | minStars ${minStars}`);
-            //     lat = data.geometry.location.lat;
-            //     lng = data.geometry.location.lng;
-            //     Hikes(lat, lng).then((returnedHikes) => {
-            //         this.setState({hikes: returnedHikes});
-            //         this.setState({searched: true});
-            //         console.log(this.state.hikes);
-            //     }).catch((err) => {
-            //         console.log(err);
-            //     });
-            // }).catch((err) => {
-            //     console.log(err);
-            // });
+            Geocode(document.getElementById('hikeSearch').value).then((data) => {
+                console.log(`maxDistance ${maxDistance} | maxResults ${maxResults} | minLength ${minLength} | minStars ${minStars}`);
+                lat = data.geometry.location.lat;
+                lng = data.geometry.location.lng;
+                Hikes(lat, lng).then((returnedHikes) => {
+                    this.setState({hikes: returnedHikes});
+                    this.setState({displayedHike: returnedHikes[0]});
+                    this.setState({displayedHikeBigImg: returnedHikes[0].imgMedium});
+                    this.setState({searched: true});
+                    console.log(this.state.hikes);
+                }).catch((err) => {
+                    console.log(err);
+                });
+            }).catch((err) => {
+                console.log(err);
+            });
             
         }
     }
@@ -137,7 +140,7 @@ class Home extends React.Component {
                     <div id="hikeDiv">
                         <Row className="hikeResultsDiv">
                             <Col xs lg="3" className="hikeNameCol">
-                                {testJSON.map(hike => 
+                                {this.state.hikes.map(hike => 
                                     <HikeResults 
                                         className="hikeNameResults"
                                         name={hike.name}

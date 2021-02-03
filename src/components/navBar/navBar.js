@@ -20,7 +20,7 @@ function navBar(props) {
                 <h1 className="navBarLogoDiv" onClick={() => props.history.push('/')}>Hiking App</h1>
             </Col>
             <Col>
-                <div className="navBarTag tagHelp">Help</div>
+                <a className="navBarTag tagHelp" href="https://github.com/rdweston1995/HikingApp" target="_blank" rel="noopener noreferrer">Help</a>
                 <Button className="navBarBtn loginBtn" onClick={(e) => props.loginHandleShow()}>Login</Button>
                 <Button className="navBarBtn signUpBtn" onClick={(e) => props.accountSignUpShow()}>Sign Up</Button>
             </Col>      
