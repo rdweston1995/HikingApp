@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/HikingApp/precache-manifest.5560323138806c070912d3277dd837b9.js"
+  "/HikingApp/precache-manifest.585b77ab00bc6a34d544d4ca5b3ebc51.js"
 );
 
 self.addEventListener('message', (event) => {

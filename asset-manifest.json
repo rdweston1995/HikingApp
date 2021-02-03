@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/HikingApp/static/css/main.12f13066.chunk.css",
-    "main.js": "/HikingApp/static/js/main.811bd456.chunk.js",
-    "main.js.map": "/HikingApp/static/js/main.811bd456.chunk.js.map",
+    "main.css": "/HikingApp/static/css/main.fb80614a.chunk.css",
+    "main.js": "/HikingApp/static/js/main.0e2510a6.chunk.js",
+    "main.js.map": "/HikingApp/static/js/main.0e2510a6.chunk.js.map",
     "runtime-main.js": "/HikingApp/static/js/runtime-main.3c1ce407.js",
     "runtime-main.js.map": "/HikingApp/static/js/runtime-main.3c1ce407.js.map",
-    "static/js/2.a64247ec.chunk.js": "/HikingApp/static/js/2.a64247ec.chunk.js",
-    "static/js/2.a64247ec.chunk.js.map": "/HikingApp/static/js/2.a64247ec.chunk.js.map",
+    "static/js/2.171cbbae.chunk.js": "/HikingApp/static/js/2.171cbbae.chunk.js",
+    "static/js/2.171cbbae.chunk.js.map": "/HikingApp/static/js/2.171cbbae.chunk.js.map",
     "index.html": "/HikingApp/index.html",
-    "precache-manifest.5560323138806c070912d3277dd837b9.js": "/HikingApp/precache-manifest.5560323138806c070912d3277dd837b9.js",
+    "precache-manifest.585b77ab00bc6a34d544d4ca5b3ebc51.js": "/HikingApp/precache-manifest.585b77ab00bc6a34d544d4ca5b3ebc51.js",
     "service-worker.js": "/HikingApp/service-worker.js",
-    "static/css/main.12f13066.chunk.css.map": "/HikingApp/static/css/main.12f13066.chunk.css.map",
-    "static/js/2.a64247ec.chunk.js.LICENSE.txt": "/HikingApp/static/js/2.a64247ec.chunk.js.LICENSE.txt",
+    "static/css/main.fb80614a.chunk.css.map": "/HikingApp/static/css/main.fb80614a.chunk.css.map",
+    "static/js/2.171cbbae.chunk.js.LICENSE.txt": "/HikingApp/static/js/2.171cbbae.chunk.js.LICENSE.txt",
     "static/media/App.css": "/HikingApp/static/media/homeBackground.fdb48285.JPG"
   },
   "entrypoints": [
     "static/js/runtime-main.3c1ce407.js",
-    "static/js/2.a64247ec.chunk.js",
-    "static/css/main.12f13066.chunk.css",
-    "static/js/main.811bd456.chunk.js"
+    "static/js/2.171cbbae.chunk.js",
+    "static/css/main.fb80614a.chunk.css",
+    "static/js/main.0e2510a6.chunk.js"
   ]
 }
