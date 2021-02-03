@@ -10,8 +10,8 @@ import Search from "./../../components/search/search";
 import LoginModal from "./../../components/loginModal/loginModal";
 import SignUpModal from "./../../components/accountSignUpModal/accountSignUpModal";
 import ImageModal from "./../../components/imageModal/imageModal";
-import Hike from "./../../components/hikeDiv/hikeDiv";
-import ResultsSearch from "./../../components/resultsSearch/resultsSearch";
+// import Hike from "./../../components/hikeDiv/hikeDiv";
+// import ResultsSearch from "./../../components/resultsSearch/resultsSearch";
 import HikeResults from "./../../components/hikeResults/hikeResults";
 import HikeInfo from "./../../components/hikeInfo/hikeInfo";
 

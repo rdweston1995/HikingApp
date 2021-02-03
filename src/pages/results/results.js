@@ -9,8 +9,8 @@ import HikeDiv from "./../../components/hikeDiv/hikeDiv";
 import "./results.css";
 
 //API
-import Hikes from "./../../api/hikes";
-import Geocode from "./../../api/geocode";
+// import Hikes from "./../../api/hikes";
+// import Geocode from "./../../api/geocode";
 
 class Results extends React.Component{
     constructor(props) {

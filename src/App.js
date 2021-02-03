@@ -11,7 +11,7 @@ import Home from "./pages/newHome/newHome";
 import Map from "./pages/map/map";
 import Account from "./pages/account/account";
 import Tips from "./pages/tips/tips";
-import Hike from "./pages/hike/hike";
+// import Hike from "./pages/hike/hike";
 import Results from "./pages/results/results";
 import Plan from "./pages/plan/plan";
 import Explore from "./pages/explore/explore";

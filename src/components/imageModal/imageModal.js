@@ -8,7 +8,7 @@ import "./imageModal.css";
 function imageModal(props) {
     return(
         <Modal show={props.show} onHide={props.onClose} animation={false}>
-            <img className="testimg" src={props.image} alt="Big picture of hike" />
+            <img className="testimg" src={props.image} alt="User submitted view from hike" />
         </Modal>
     );
 }
