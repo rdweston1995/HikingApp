@@ -8,10 +8,15 @@
 .hikeInfoName {
     font-size: 3.5em;  
     margin:0;
+    color: #4a660e;
 }
 
 .hikeInfoLoc {
     font-size: 2em;
+}
+
+.hikeInfoName, .hikeInfoLoc{
+    font-weight: 600;
 }
 
 .hikeInfoDiff {
@@ -22,6 +27,14 @@
 .hikeInfoAscent, .hikeInfoLeng{
     width: 33%;
     float:left;
+}
+
+.hikeInfoHiLo{
+    width: 40%
+}
+
+.hikeInfoStars, .hikeInfoLeng, .hikeInfoAscent, .hikeInfoHiLo{
+    font-size: 1.15em;
 }
 
 .hikeBasicInfo{
@@ -36,11 +49,38 @@
 }
 
 .hikeInfoSum{
-    font-size: 1.5em;
+    font-size: 1.25em;
 }
 
 .hikeInfoUrl{
     font-size: 0.75em;
+    display: inline-block;
+}
+
+.hikingPic {
+    box-shadow: 1px 1.5px 1px 0.5px #000000;
+}
+
+.hikeSummary, .hikeRecentReports, .hikingProjectLink{
+    display: inline-block;
+    width: 60%;
+}
+
+.hikeSummaryTitle, .hikeRecentReportsTitle{
+    /* border-bottom: 2px solid black; */
+    font-weight: 600;
+}
+
+.hikeReportDate, .hikeReportStatus, .hikeReportDetails{
+    font-size: 1.25em;
+}
+
+.font {
+    font-family: 'Roboto', sans-serif;
+}
+
+.bottomBorder{
+    border-bottom: 2px solid black;
 }
 
 

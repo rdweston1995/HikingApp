@@ -36,28 +36,37 @@ function hikeInfo(props) {
             <a className="hikeInfoUrl" href={props.hike.url} target="_blank" rel="noopener noreferrer">HikingProject hike page</a>
             <img src={props.hike.imgSmallMed} alt="Photo of the hike"/> */}
             <div className="hikeBasicInfo">
-                <h2 className="hikeInfoName">{props.hike.name}</h2>
-                <h3 className="hikeInfoLoc">{props.hike.location}</h3>
+                <h2 className="hikeInfoName font">{props.hike.name}</h2>
+                <h3 className="hikeInfoLoc font">{props.hike.location}</h3>
                 <div className="hikeStats">
                     <Row>
-                        <p className="hikeInfoDiff">{props.hike.difficulty}</p>
-                        <p className="hikeInfoStars">{props.hike.stars} / 5 stars</p>
+                        <p className="hikeInfoDiff font">{props.hike.difficulty}</p>
+                        <p className="hikeInfoStars font">{props.hike.stars} / 5 stars</p>
                     </Row>
                     <Row>
-                        <p className="hikeInfoLeng">{props.hike.length} miles</p>
-                        <p className="hikeInfoAscent">Ascent: {props.hike.ascent}</p>
-                        <p className="hikeInfoAscent">Low: {props.hike.low}ft - High: {props.hike.high}ft</p>
+                        <p className="hikeInfoLeng font">Lenght: {props.hike.length} miles</p>
+                        <p className="hikeInfoAscent font">Ascent: {props.hike.ascent}ft</p>
+                        <p className="hikeInfoHiLo font">Low: {props.hike.low}ft - High: {props.hike.high}ft</p>
                     </Row>
                 </div>
             </div>
             <div className="hikeImgSmll">
-                <img src={props.hike.imgSmallMed} alt="Photo" height="75%" onClick={() => props.imgClick()}/>
+                <img className="hikingPic" src={props.hike.imgSmallMed} alt="Photo" height="75%" onClick={() => props.imgClick()}/>
             </div>
             <div className="hikeSummary">
-                <p className="asdasdsa">Description: </p>
-                <p className="hikeInfoSum">{props.hike.summary}</p>
-                <a className="hikeInfoUrl" href={props.hike.url} target="_blank" rel="noopener noreferrer">HikingProject hike page</a>  
+                <h3 className="hikeSummaryTitle font bottomBorder">Description: </h3>
+                <p className="hikeInfoSum font">{props.hike.summary}</p>
             </div>
+            <div className="hikeRecentReports">
+                <h3 className="hikeRecentReportsTitle font bottomBorder">Recent Trip Reports:</h3>
+                <p className="hikeReportDate font">{props.hike.conditionDate.substring(0,10)}</p>
+                <p className="hikeReportStatus font">{props.hike.conditionStatus}</p>
+                <p className="hikeReportDetails font">{props.hike.conditionDetails}</p>
+            </div>
+            <div className="hikingProjectLink">
+                <a className="hikeInfoUrl font" href={props.hike.url} target="_blank" rel="noopener noreferrer">HikingProject page</a>  
+            </div>
+
         </div>
     );
 };
