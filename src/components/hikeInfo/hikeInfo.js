@@ -2,6 +2,7 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 // import Col from "react-bootstrap/Col";
+import loadImages from "../loadImages/loadImages";
 
 //CSS
 import "./hikeInfo.css";
@@ -40,7 +41,8 @@ function hikeInfo(props) {
                 <h3 className="hikeInfoLoc font">{props.hike.location}</h3>
                 <div className="hikeStats">
                     <Row>
-                        <p className="hikeInfoDiff font">{props.hike.difficulty}</p>
+                        {/* <p className="hikeInfoDiff font">{props.hike.difficulty}</p> */}
+                        <img className="difficultyImg" src={loadImages[props.hike.difficulty]} width="30px" height="35px"/>
                         <p className="hikeInfoStars font">{props.hike.stars} / 5 stars</p>
                     </Row>
                     <Row>

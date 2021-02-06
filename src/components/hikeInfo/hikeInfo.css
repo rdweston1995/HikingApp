@@ -19,9 +19,13 @@
     font-weight: 600;
 }
 
-.hikeInfoDiff {
-    width: 10%;
+.difficultyImg{
+    margin: 0 15px 0 0;
     float:left;
+}
+
+.hikeInfoStars{
+    margin: 0 0 0 15px;
 }
 
 .hikeInfoAscent, .hikeInfoLeng{
