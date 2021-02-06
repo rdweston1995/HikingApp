@@ -21,6 +21,8 @@
     /* width: 200px; */
     float: right;
     margin: 6% 0 0 0;
+    color: #4a660e;
+    font-weight: 600;
 }
 
 .navBarBtn {
