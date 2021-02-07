@@ -4,16 +4,17 @@
 Hiking App (name change pending) is a personal project I've been working on. The App will work similar to many other hike searching apps but with the difference of more user reviews for hikes and the ability to search for nearby camping or to save your own campsites.
 
 ## Roadmap
-*Database creation
-*User account creation
-*User sign in/logout
-*User accounts
-*Update hike results display
-*Google maps API integration
-*Tips/Checklist page
-*User saved hikes
-*Upload trail reports
-*Upload modal/page
+* Database creation
+* User account creation
+* User sign in/logout
+* User accounts
+* Update hike results display
+* Google maps API integration
+* Tips/Checklist page
+* User saved hikes
+* Upload trail reports
+* Upload modal/page
+* NavBar change similar to that of youtube
 
 ## Support
 For any issues you can reach me at robert.d.weston@gmail.com and I will help in any way I can.
