@@ -15,6 +15,8 @@ Hiking App (name change pending) is a personal project I've been working on. The
 * Upload trail reports
 * Upload modal/page
 * NavBar change similar to that of youtube
+* Begin development for mobile
+* Fix navbar scaling with different screen sizes
 
 ## Support
 For any issues you can reach me at robert.d.weston@gmail.com and I will help in any way I can.
