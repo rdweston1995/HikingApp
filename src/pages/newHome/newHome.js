@@ -45,6 +45,8 @@ class Home extends React.Component {
         }
     }
 
+   
+
     //Function to call the Hikes and Geocode API
     onSearch = async () => {
         if (document.getElementById('hikeSearch').value !== '') {
@@ -71,6 +73,13 @@ class Home extends React.Component {
             //     console.log(err);
             // });
             
+        }
+    }
+
+    handleKeypress = e => {
+        if(e.key === 'Enter') {
+            // console.log(e);
+            this.onSearch();
         }
     }
  
@@ -158,7 +167,7 @@ class Home extends React.Component {
                             </Col> 
                         </Row>
                     </div>
-                     : <Search onSearch={this.onSearch}/>}
+                     : <Search onSearch={this.onSearch} onKeyPress={this.handleKeypress}/>}
             </div>
         );
     };

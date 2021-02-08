@@ -10,10 +10,11 @@ import "./search.css";
 function Search (props) {
     return (
         <div id="search" className="searchDiv">
-            <InputGroup id="hikeSearchBar">
+            <InputGroup id="hikeSearchBar" onKeyPress={(e) => props.onKeyPress(e)}>
                 <FormControl id="hikeSearch" type="text" aria-describedby="basic-addon2" placeholder="Enter a city, park, or trail" className="hikeSearch"/>
                 <InputGroup.Append>
                     <Button id="searchButton" className="searchButton" variant="outline-secondary" onClick={(e) => props.onSearch()} >Search</Button>
+                    {/* <Button id="searchButton" className="searchButton" variant="outline-secondary">Search</Button> */}
                 </InputGroup.Append>
             </InputGroup>
         </div>

@@ -4,6 +4,17 @@
     height: 10vh;
     box-shadow: 0px 1px 5px black;
     z-index: 99;
+    /* text-align: center; */
+}
+
+.dropdown{
+    float:right;
+}
+
+.navBarTitle{
+    /* text-align: center; */
+    /* float:right; */
+    margin: 2%;
 }
 
 .navBarLogo{
@@ -13,16 +24,18 @@
 }
 .logo{
     height: 10vh;
+    width: 10vh;
     float:left;
 }
 
 .navBarLogoDiv {
-    font-size: 3em;
+    font-size: 2.5em;
     /* width: 200px; */
-    float: right;
-    margin: 6% 0 0 0;
+    /* float: right; */
+    /* margin: 6% 0 0 0; */
     color: #4a660e;
     font-weight: 600;
+    text-align: center;
 }
 
 .navBarBtn {
