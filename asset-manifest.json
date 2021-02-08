@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/HikingApp/static/css/main.5db63df1.chunk.css",
-    "main.js": "/HikingApp/static/js/main.c34774ec.chunk.js",
-    "main.js.map": "/HikingApp/static/js/main.c34774ec.chunk.js.map",
+    "main.css": "/HikingApp/static/css/main.42836eef.chunk.css",
+    "main.js": "/HikingApp/static/js/main.4c8e796c.chunk.js",
+    "main.js.map": "/HikingApp/static/js/main.4c8e796c.chunk.js.map",
     "runtime-main.js": "/HikingApp/static/js/runtime-main.3c1ce407.js",
     "runtime-main.js.map": "/HikingApp/static/js/runtime-main.3c1ce407.js.map",
-    "static/js/2.979c169a.chunk.js": "/HikingApp/static/js/2.979c169a.chunk.js",
-    "static/js/2.979c169a.chunk.js.map": "/HikingApp/static/js/2.979c169a.chunk.js.map",
+    "static/js/2.3d60d200.chunk.js": "/HikingApp/static/js/2.3d60d200.chunk.js",
+    "static/js/2.3d60d200.chunk.js.map": "/HikingApp/static/js/2.3d60d200.chunk.js.map",
     "index.html": "/HikingApp/index.html",
-    "precache-manifest.0b1b47300676a30902de7503fc25a758.js": "/HikingApp/precache-manifest.0b1b47300676a30902de7503fc25a758.js",
+    "precache-manifest.60f5bd5a9473b0b79bb307124efc1ca9.js": "/HikingApp/precache-manifest.60f5bd5a9473b0b79bb307124efc1ca9.js",
     "service-worker.js": "/HikingApp/service-worker.js",
-    "static/css/main.5db63df1.chunk.css.map": "/HikingApp/static/css/main.5db63df1.chunk.css.map",
-    "static/js/2.979c169a.chunk.js.LICENSE.txt": "/HikingApp/static/js/2.979c169a.chunk.js.LICENSE.txt",
+    "static/css/main.42836eef.chunk.css.map": "/HikingApp/static/css/main.42836eef.chunk.css.map",
+    "static/js/2.3d60d200.chunk.js.LICENSE.txt": "/HikingApp/static/js/2.3d60d200.chunk.js.LICENSE.txt",
     "static/media/bearable.jpg": "/HikingApp/static/media/bearable.0d1af930.jpg",
     "static/media/App.css": "/HikingApp/static/media/homeBackground.fdb48285.JPG"
   },
   "entrypoints": [
     "static/js/runtime-main.3c1ce407.js",
-    "static/js/2.979c169a.chunk.js",
-    "static/css/main.5db63df1.chunk.css",
-    "static/js/main.c34774ec.chunk.js"
+    "static/js/2.3d60d200.chunk.js",
+    "static/css/main.42836eef.chunk.css",
+    "static/js/main.4c8e796c.chunk.js"
   ]
 }
