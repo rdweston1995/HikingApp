@@ -7,6 +7,7 @@ import {withRouter} from "react-router-dom";
 import DropdownBtn from "react-bootstrap/DropdownButton"
 import Dropdown from "react-bootstrap/Dropdown"
 import loadImages from "../loadImages/loadImages";
+import Hamburger from "../hamburger/hamburger";
 
 //CSS
 import "./navBar.css";
@@ -14,7 +15,7 @@ import "./navBar.css";
 function navBar(props) {
     return(
         <Row id="navBar" className="navBar">
-            <Col md={{span: 3}}className="colLeft">
+            {/* <Col md={{span: 3}}className="colLeft">
                 <div className="navBarTag tagExplore" onClick={() => props.history.push('/explore')}>Explore</div>
                 <div className="navBarTag tagPlan" onClick={() => props.history.push('/plan')}>Plan</div>
                 <div className="navBarTag tagTips" onClick={() => props.history.push('/tips')}>Tips</div>
@@ -27,23 +28,23 @@ function navBar(props) {
                 <a className="navBarTag tagHelp" href="https://github.com/rdweston1995/HikingApp" target="_blank" rel="noopener noreferrer">Help</a>
                 <Button className="navBarBtn loginBtn" onClick={(e) => props.loginHandleShow()}>Login</Button>
                 <Button className="navBarBtn signUpBtn" onClick={(e) => props.accountSignUpShow()}>Sign Up</Button>
-            </Col> 
-            {/* <Col>
+            </Col>  */}
+            <Col>
             <img className="logo" src={loadImages['bearable']} alt="Logo" />
             <h1 className="navBarTitle">Bearable</h1>
             </Col>
             <Col>   
-            <h1 className="navBarTitle">Bearable</h1>     
+            {/* <h1 className="navBarTitle">Bearable</h1>      */}
 
             </Col>
             <Col>
-            <DropdownBtn id="dropdown-basic-button" className="testBtn" title="Test" styles={{float: 'right'}}>
+            <DropdownBtn id="dropdown-basic-button" className="testBtn" title={<Hamburger/>} styles={{float: 'right'}}>
                 <Dropdown.Item className="navBarTag tagExplore" onClick={() => props.history.push('/explore')}>Explore</Dropdown.Item>
                 <Dropdown.Item className="navBarTag tagPlan" onClick={() => props.history.push('/plan')}>Plan</Dropdown.Item>
                 <Dropdown.Item className="navBarTag tagtips" onClick={() => props.history.push('/tips')}>Tips</Dropdown.Item>
                 <Dropdown.Item className="navBarTag tagHelp" href="https://github.com/rdweston1995/HikingApp" target="_blank" rel="noopener noreferrer">Help</Dropdown.Item>
             </DropdownBtn>
-            </Col> */}
+            </Col>
         </Row>
     );
 }
