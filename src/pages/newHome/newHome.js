@@ -21,6 +21,8 @@ import "./newHome.css";
 //API
 import Hikes from "./../../api/hikes";
 import Geocode from "./../../api/geocode";
+// import Weather from "./../../api/weather";
+// const Weather  = require("weather-js");
 
 //Test Data
 import testJSON from "./../../testJSON/testJSON";
@@ -39,6 +41,7 @@ class Home extends React.Component {
             displayedHike: testJSON[0],
             displayedHikeBigImg: testJSON[0].imgMedium,
             displayBigImg: false,
+            displayWeather: {},
             searched: false,
             tipsDisplay: false,
             history: ''
@@ -101,8 +104,17 @@ class Home extends React.Component {
 
     /** State manipulation to change the displayed hike on results page */
     hikeOnClick = (hike) => {
+        
         this.setState({displayedHike: hike});
         this.setState({displayedHikeBigImg: hike.imgMedium});
+        // this.setState({displayWeather: Weather(this.state.displayedHike)});
+        // console.log(Weather(this.state.displayedHike.location, 'F'));
+        // Weather.find({search: 'San Francisco, CA', degreeType: 'F'}, function(err, result) {
+            // if(err) console.log(err);
+          
+            // console.log(JSON.stringify(result, null, 2));
+        //   });/
+        // console.log(this.state.displayWeather);
         console.log(this.state.displayedHike);
     }
 
