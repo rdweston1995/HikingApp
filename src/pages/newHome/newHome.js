@@ -21,8 +21,8 @@ import "./newHome.css";
 //API
 import Hikes from "./../../api/hikes";
 import Geocode from "./../../api/geocode";
-// import Weather from "./../../api/weather";
-// const Weather  = require("weather-js");
+import Weather from "./../../api/weather";
+
 
 //Test Data
 import testJSON from "./../../testJSON/testJSON";
@@ -115,6 +115,8 @@ class Home extends React.Component {
             // console.log(JSON.stringify(result, null, 2));
         //   });/
         // console.log(this.state.displayWeather);
+
+        Weather(this.state.displayedHike.location);
         console.log(this.state.displayedHike);
     }
 

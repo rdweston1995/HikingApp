@@ -1,19 +1,12 @@
-const weather = require("weather-js");
+const axios = require("axios");
 
-function weathertest(location, dT) {
-    console.log('test');
-    // console.log(location);
-    // console.log(degreeType);
-    // weatherjs.find({search: location, degreeType: dT}, function(err, result){
-    //     if(err) console.log(err);
-    //     console.log(result, null, 2);
-    // //     // return {result};
-    // });
-    weather.find({search: 'San Francisco, CA', degreeType: 'F'}, function(err, result) {
-        if(err) console.log(err);
-      
-        console.log(JSON.stringify(result, null, 2));
-      });
+function Weather(location) {
+  // console.log(process.env.REACT_APP_OPEN_WEATHER_KEY);
+    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_OPEN_WEATHER_KEY}`).then((res) => {
+      console.log(res.data);
+    }).catch((err) => {
+      console.log(err);
+    });
 }
 
-export default weather;
+export default Weather;
