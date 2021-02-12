@@ -116,7 +116,7 @@ class Home extends React.Component {
         //   });/
         // console.log(this.state.displayWeather);
 
-        Weather(this.state.displayedHike.location);
+        Weather(this.state.displayedHike.location, this.state.displayedHike.latitude, this.state.displayedHike.longitude);
         console.log(this.state.displayedHike);
     }
 

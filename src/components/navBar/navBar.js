@@ -33,15 +33,15 @@ function navBar(props) {
             <img className="logo" src={loadImages['bearable']} alt="Logo" />
             <h1 className="navBarTitle">Bearable</h1>
             </Col>
-            <Col>   
-            {/* <h1 className="navBarTitle">Bearable</h1>      */}
+            {/* <Col>   
+            <h1 className="navBarTitle">Bearable</h1>     
 
-            </Col>
+            </Col> */}
             <Col>
             <DropdownBtn id="dropdown-basic-button" className="testBtn" title={<Hamburger/>} styles={{float: 'right'}}>
                 <Dropdown.Item className="navBarTag tagExplore" onClick={() => props.history.push('/explore')}>Explore</Dropdown.Item>
                 <Dropdown.Item className="navBarTag tagPlan" onClick={() => props.history.push('/plan')}>Plan</Dropdown.Item>
-                <Dropdown.Item className="navBarTag tagtips" onClick={() => props.history.push('/tips')}>Tips</Dropdown.Item>
+                <Dropdown.Item className="navBarTag tagTips" onClick={() => props.history.push('/tips')}>Tips</Dropdown.Item>
                 <Dropdown.Item className="navBarTag tagHelp" href="https://github.com/rdweston1995/HikingApp" target="_blank" rel="noopener noreferrer">Help</Dropdown.Item>
             </DropdownBtn>
             </Col>
