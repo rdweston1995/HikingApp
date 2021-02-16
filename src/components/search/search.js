@@ -3,6 +3,7 @@ import React from "react";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
+import {withRouter} from "react-router-dom";
 
 //CSS
 import "./search.css";
@@ -13,7 +14,7 @@ function Search (props) {
             <InputGroup id="hikeSearchBar" onKeyPress={(e) => props.onKeyPress(e)}>
                 <FormControl id="hikeSearch" type="text" aria-describedby="basic-addon2" placeholder="Enter a city, park, or trail" className="hikeSearch"/>
                 <InputGroup.Append>
-                    <Button id="searchButton" className="searchButton" variant="outline-secondary" onClick={(e) => props.onSearch()} >Search</Button>
+                    <Button id="searchButton" className="searchButton" variant="outline-secondary" onClick={(e) => {props.onSearch(); props.history.push('/results')}} >Search</Button>
                     {/* <Button id="searchButton" className="searchButton" variant="outline-secondary">Search</Button> */}
                 </InputGroup.Append>
             </InputGroup>
@@ -21,4 +22,4 @@ function Search (props) {
     );
 }
 
-export default Search;
+export default withRouter(Search);

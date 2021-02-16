@@ -29,9 +29,9 @@ function navBar(props) {
                 <Button className="navBarBtn loginBtn" onClick={(e) => props.loginHandleShow()}>Login</Button>
                 <Button className="navBarBtn signUpBtn" onClick={(e) => props.accountSignUpShow()}>Sign Up</Button>
             </Col>  */}
-            <Col onClick={() => props.history.push('/')}>
-            <img className="logo" src={loadImages['bearable']} alt="Logo" />
-            <h1 className="navBarTitle">Bearable</h1>
+            <Col onClick={() => {props.history.push('/'); props.returnHome()}}>
+                <img className="logo" src={loadImages['bearable']} alt="Logo" />
+                <h1 className="navBarTitle">Bearable</h1>
             </Col>
             {/* <Col>   
             <h1 className="navBarTitle">Bearable</h1>     

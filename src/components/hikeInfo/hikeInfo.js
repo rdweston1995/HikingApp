@@ -61,7 +61,7 @@ function hikeInfo(props) {
             </div>
             <div className="hikeRecentReports">
                 <h3 className="hikeRecentReportsTitle font bottomBorder">Recent Trip Reports:</h3>
-                <p className="hikeReportDate font">{props.hike.conditionDate.substring(0,10)}</p>
+                {/* <p className="hikeReportDate font">{props.hike.conditionDate.substring(0,10)}</p> */}
                 <p className="hikeReportStatus font">{props.hike.conditionStatus}</p>
                 <p className="hikeReportDetails font">{props.hike.conditionDetails}</p>
             </div>

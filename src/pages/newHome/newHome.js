@@ -1,6 +1,7 @@
 //Node imports
 import React from "react";
 // import { useHistory } from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
@@ -14,6 +15,7 @@ import Hike from "./../../components/hikeDiv/hikeDiv";
 import ResultsSearch from "./../../components/resultsSearch/resultsSearch";
 import HikeResults from "./../../components/hikeResults/hikeResults";
 import HikeInfo from "./../../components/hikeInfo/hikeInfo";
+import ResultsPage from "./../results/results";
 
 //CSS
 import "./newHome.css";
@@ -29,22 +31,24 @@ import testJSON from "./../../testJSON/testJSON";
 
 class Home extends React.Component {
     //For testing
+    //hikes: testJSON
     //displayedHike: testJSON[0]
     //displayedHikeBigImg: testJSON[0].imgMedium
     //Deployment
+    //{}
     //{}
     //''
     constructor(props) {
         super(props);
         this.state = {
-            hikes: [],
-            displayedHike: {},
-            displayedHikeBigImg: '',
+            hikes: testJSON,
+            displayedHike: testJSON[0],
+            displayedHikeBigImg: testJSON[0].imgMedium,
             displayBigImg: false,
             displayWeather: {},
             searched: false,
-            tipsDisplay: false,
-            history: ''
+            tipsDisplay: false
+
         }
     }
 
@@ -54,27 +58,29 @@ class Home extends React.Component {
     onSearch = async () => {
         if (document.getElementById('hikeSearch').value !== '') {
             //For Testing
-            // this.setState({searched: true});
+            this.setState({searched: true});
+            console.log(this.state.hikes);
+            // history.push('/results');
 
             //DO NOT DELETE
-            let lat = '', lng = '', maxDistance = '30', maxResults = '10', minLength = '0', minStars = '0';
+            // let lat = '', lng = '', maxDistance = '30', maxResults = '10', minLength = '0', minStars = '0';
 
-            Geocode(document.getElementById('hikeSearch').value).then((data) => {
-                console.log(`maxDistance ${maxDistance} | maxResults ${maxResults} | minLength ${minLength} | minStars ${minStars}`);
-                lat = data.geometry.location.lat;
-                lng = data.geometry.location.lng;
-                Hikes(lat, lng).then((returnedHikes) => {
-                    this.setState({hikes: returnedHikes});
-                    this.setState({displayedHike: returnedHikes[0]});
-                    this.setState({displayedHikeBigImg: returnedHikes[0].imgMedium});
-                    this.setState({searched: true});
-                    console.log(this.state.hikes);
-                }).catch((err) => {
-                    console.log(err);
-                });
-            }).catch((err) => {
-                console.log(err);
-            });
+            // Geocode(document.getElementById('hikeSearch').value).then((data) => {
+            //     console.log(`maxDistance ${maxDistance} | maxResults ${maxResults} | minLength ${minLength} | minStars ${minStars}`);
+            //     lat = data.geometry.location.lat;
+            //     lng = data.geometry.location.lng;
+            //     Hikes(lat, lng).then((returnedHikes) => {
+            //         this.setState({hikes: returnedHikes});
+            //         this.setState({displayedHike: returnedHikes[0]});
+            //         this.setState({displayedHikeBigImg: returnedHikes[0].imgMedium});
+            //         this.setState({searched: true});
+            //         console.log(this.state.hikes);
+            //     }).catch((err) => {
+            //         console.log(err);
+            //     });
+            // }).catch((err) => {
+            //     console.log(err);
+            // });
             
         }
     }
@@ -115,6 +121,8 @@ class Home extends React.Component {
     hikeImgClose = () => {this.setState({displayBigImg: false})}
     hikeImgShow = () => {this.setState({displayBigImg: true})}
 
+    returnHome = () => {this.setState({searched: false})}
+
     //Render function
     /**
      * Change routing for results page to acutally not just be the home page
@@ -132,6 +140,7 @@ class Home extends React.Component {
                         loginHandleShow={this.loginHandleShow}
                         accountSignUpShow={this.accountSignUpShow}
                         history={this.state.history}
+                        returnHome={this.returnHome}
                         tipsOpen={this.tipsOnClick}/>
                     {this.state.loginModalShow
                         ? <LoginModal
@@ -173,10 +182,13 @@ class Home extends React.Component {
                             </Col> 
                         </Row>
                     </div>
+                    // <ResultsPage 
+                    //     hikes={this.state.hikes}/>
                      : <Search onSearch={this.onSearch} onKeyPress={this.handleKeypress}/>}
+                     {/* <Search onSearch={this.onSearch} onKeyPress={this.handleKeypress} history={this.state.history}/> */}
             </div>
         );
     };
 }
 
-export default Home;
+export default withRouter(Home);
