@@ -29,8 +29,8 @@ function navBar(props) {
                 <Button className="navBarBtn loginBtn" onClick={(e) => props.loginHandleShow()}>Login</Button>
                 <Button className="navBarBtn signUpBtn" onClick={(e) => props.accountSignUpShow()}>Sign Up</Button>
             </Col>  */}
-            <Col onClick={() => {props.history.push('/'); props.returnHome()}}>
-                <img className="logo" src={loadImages['bearable']} alt="Logo" />
+            <Col onClick={(e) => props.history.push('/')}>
+                <img className="logo" src={loadImages['bearable']} alt="Logo"/>
                 <h1 className="navBarTitle">Bearable</h1>
             </Col>
             {/* <Col>   
@@ -38,6 +38,7 @@ function navBar(props) {
 
             </Col> */}
             <Col>
+            {/* <Button className="navBarBtn loginBtn" onClick={(e) => props.loginHandleShow()}>Login</Button> */}
             <DropdownBtn id="dropdown-basic-button" className="testBtn" title={<Hamburger/>} styles={{float: 'right'}}>
                 <Dropdown.Item className="navBarTag tagExplore" onClick={() => props.history.push('/explore')}>Explore</Dropdown.Item>
                 <Dropdown.Item className="navBarTag tagPlan" onClick={() => props.history.push('/plan')}>Plan</Dropdown.Item>

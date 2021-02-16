@@ -40,6 +40,7 @@ class Home extends React.Component {
     //''
     constructor(props) {
         super(props);
+        this.returnHome = this.returnHome.bind(this);
         this.state = {
             hikes: testJSON,
             displayedHike: testJSON[0],
