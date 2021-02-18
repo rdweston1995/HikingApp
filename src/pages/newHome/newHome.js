@@ -40,7 +40,7 @@ class Home extends React.Component {
     //''
     constructor(props) {
         super(props);
-        this.returnHome = this.returnHome.bind(this);
+        // this.returnHome = this.returnHome.bind(this);
         this.state = {
             hikes: testJSON,
             displayedHike: testJSON[0],
@@ -122,7 +122,9 @@ class Home extends React.Component {
     hikeImgClose = () => {this.setState({displayBigImg: false})}
     hikeImgShow = () => {this.setState({displayBigImg: true})}
 
-    returnHome = () => {this.setState({searched: false})}
+    returnHome = () => {
+        console.log("returnHome");
+        this.setState({searched: false})}
 
     //Render function
     /**

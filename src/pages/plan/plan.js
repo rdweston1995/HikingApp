@@ -1,5 +1,6 @@
 //Node Imports
 import React from "react";
+import {withRouter} from "react-router-dom";
 
 import NavBar from "./../../components/navBar/navBar";
 
@@ -19,4 +20,4 @@ class Plan extends React.Component {
     }
 };
 
-export default Plan;
+export default withRouter(Plan);

@@ -1,5 +1,6 @@
 //Node Imports
 import React from "react";
+import {withRouter} from "react-router-dom";
 
 import NavBar from "./../../components/navBar/navBar";
 
@@ -19,4 +20,4 @@ class Explore extends React.Component {
     }
 };
 
-export default Explore;
+export default withRouter(Explore);

@@ -30,8 +30,8 @@ function navBar(props) {
                 <Button className="navBarBtn signUpBtn" onClick={(e) => props.accountSignUpShow()}>Sign Up</Button>
             </Col>  */}
             <Col onClick={(e) => props.history.push('/')}>
-                <img className="logo" src={loadImages['bearable']} alt="Logo"/>
-                <h1 className="navBarTitle">Bearable</h1>
+                <img className="logo" src={loadImages['bearable']} alt="Logo" onClick={() => props.returnHome()}/>
+                <h1 className="navBarTitle" onClick={() => props.returnHome()}>Bearable</h1>
             </Col>
             {/* <Col>   
             <h1 className="navBarTitle">Bearable</h1>     
