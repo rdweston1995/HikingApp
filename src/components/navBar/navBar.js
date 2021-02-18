@@ -11,7 +11,7 @@ import Hamburger from "../hamburger/hamburger";
 
 //CSS
 import "./navBar.css";
-//xs={2}
+
 function navBar(props) {
     return(
         <Row id="navBar" className="navBar">

@@ -14,7 +14,7 @@ function Search (props) {
             <InputGroup id="hikeSearchBar" onKeyPress={(e) => props.onKeyPress(e)}>
                 <FormControl id="hikeSearch" type="text" aria-describedby="basic-addon2" placeholder="Enter a city, park, or trail" className="hikeSearch"/>
                 <InputGroup.Append>
-                    <Button id="searchButton" className="searchButton" variant="outline-secondary" onClick={(e) => {props.onSearch(); props.history.push('/results')}} >Search</Button>
+                    <Button id="searchButton" className="searchButton" variant="outline-secondary" onClick={(e) => {props.onSearch(); props.history.push('/results')}}>Explore</Button>
                     {/* <Button id="searchButton" className="searchButton" variant="outline-secondary">Search</Button> */}
                 </InputGroup.Append>
             </InputGroup>
