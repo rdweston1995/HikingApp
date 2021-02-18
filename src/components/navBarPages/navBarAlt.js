@@ -11,6 +11,7 @@ import Hamburger from "../hamburger/hamburger";
 
 //Component
 import Search from "./../../components/search/search";
+import ResultsSearch from "./../../components/resultsSearch/resultsSearch";
 
 import "./navBarAlt.css";
 
@@ -22,7 +23,8 @@ function navBarAlt(props) {
                 <h1 className="navBarTitle" onClick={() => props.history.push('/')}>Bearable</h1>
             </Col>
             <Col>
-                <Search />
+                {/* <Search /> */}
+                <ResultsSearch />
             </Col>
             <Col>
                 <DropdownBtn id="dropdown-basic-button" className="testBtn" title={<Hamburger/>} styles={{float: 'right'}}>
