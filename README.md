@@ -17,6 +17,9 @@ Hiking App (name change pending) is a personal project I've been working on. The
 * NavBar change similar to that of youtube
 * Begin development for mobile
 * Fix navbar scaling with different screen sizes
+* Create favicon
+* Restructure entire site
+
 
 ## Support
 For any issues you can reach me at robert.d.weston@gmail.com and I will help in any way I can.

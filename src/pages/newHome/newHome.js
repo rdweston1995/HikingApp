@@ -115,7 +115,7 @@ class Home extends React.Component {
         this.setState({displayedHike: hike});
         this.setState({displayedHikeBigImg: hike.imgMedium});
         // this.setState({displayWeather: Weather(this.state.displayedHike)});
-        // Weather(this.state.displayedHike.location, this.state.displayedHike.latitude, this.state.displayedHike.longitude);
+        Weather(this.state.displayedHike.location, this.state.displayedHike.latitude, this.state.displayedHike.longitude);
         console.log(this.state.displayedHike);
     }
 
