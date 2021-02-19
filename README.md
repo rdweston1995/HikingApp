@@ -19,6 +19,7 @@ Hiking App (name change pending) is a personal project I've been working on. The
 * Fix navbar scaling with different screen sizes
 * Create favicon
 * Restructure entire site
+* Weather API functionality
 
 
 ## Support
