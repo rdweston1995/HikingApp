@@ -25,8 +25,15 @@ const axios = require("axios");
  *    temp
  */
 function Weather(location, lat , lon) {
-  axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_OPEN_WEATHER_KEY}`).then((res) => {
-    console.log(res.data);
+  return axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_OPEN_WEATHER_KEY}`).then((res) => {
+    let weatherObj = {
+      current: res.data.current,
+      daily: res.data.daily,
+      hourly: [res.data.hourly[0], res.data.hourly[1], res.data.hourly[2], res.data.hourly[3], res.data.hourly[4], res.data.hourly[5]]
+    }
+    // console.log(res.data);
+    // console.log(weatherObj);
+    return weatherObj;
   }).catch((err) => {
     console.log(err);
   });

@@ -49,7 +49,6 @@ class Home extends React.Component {
             displayWeather: {},
             searched: false,
             tipsDisplay: false
-
         }
     }
 
@@ -110,12 +109,17 @@ class Home extends React.Component {
     accountOnSubmit = () => {this.accountSignUpClose()}
 
     /** State manipulation to change the displayed hike on results page */
-    hikeOnClick = (hike) => {
+    hikeOnClick = async (hike) => {
         
         this.setState({displayedHike: hike});
         this.setState({displayedHikeBigImg: hike.imgMedium});
-        // this.setState({displayWeather: Weather(this.state.displayedHike)});
-        Weather(this.state.displayedHike.location, this.state.displayedHike.latitude, this.state.displayedHike.longitude);
+
+        Weather(this.state.displayedHike.location, this.state.displayedHike.latitude, this.state.displayedHike.longitude).then((data) => {
+            this.setState({displayWeather: data});
+            // console.log(data);
+        }).catch((err) => {
+            console.log(err);
+        });
         console.log(this.state.displayedHike);
     }
 
@@ -176,7 +180,7 @@ class Home extends React.Component {
                                         name={hike.name}
                                         location={hike.location}
                                         onClick={() => this.hikeOnClick(hike)}
-                                        key={hike.id}
+                                        key={hike.key}
                                     />    
                             )}
                             </Col>
