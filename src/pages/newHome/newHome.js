@@ -116,7 +116,6 @@ class Home extends React.Component {
 
         Weather(this.state.displayedHike.location, this.state.displayedHike.latitude, this.state.displayedHike.longitude).then((data) => {
             this.setState({displayWeather: data});
-            // console.log(data);
         }).catch((err) => {
             console.log(err);
         });
