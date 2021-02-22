@@ -23,8 +23,6 @@ import "./newHome.css";
 //API
 import Hikes from "./../../api/hikes";
 import Geocode from "./../../api/geocode";
-import Weather from "./../../api/weather";
-
 
 //Test Data
 import testJSON from "./../../testJSON/testJSON";
@@ -111,21 +109,18 @@ class Home extends React.Component {
     accountOnSubmit = () => {this.accountSignUpClose()}
 
     /** State manipulation to change the displayed hike on results page */
-    hikeOnClick = async (hike) => {
+    // hikeOnClick = async (hike) => {
         
-        this.setState({displayedHike: hike});
-        this.setState({displayedHikeBigImg: hike.imgMedium});
+    //     this.setState({displayedHike: hike});
+    //     this.setState({displayedHikeBigImg: hike.imgMedium});
 
-        Weather(this.state.displayedHike.location, this.state.displayedHike.latitude, this.state.displayedHike.longitude).then((data) => {
-            this.setState({displayWeather: data});
-        }).catch((err) => {
-            console.log(err);
-        });
-        console.log(this.state.displayedHike);
-    }
-
-    hikeImgClose = () => {this.setState({displayBigImg: false})}
-    hikeImgShow = () => {this.setState({displayBigImg: true})}
+        // Weather(this.state.displayedHike.location, this.state.displayedHike.latitude, this.state.displayedHike.longitude).then((data) => {
+        //     this.setState({displayWeather: data});
+        // }).catch((err) => {
+        //     console.log(err);
+        // });
+    //     console.log(this.state.displayedHike);
+    // }
 
     returnHome = () => {
         console.log("returnHome");
@@ -163,35 +158,8 @@ class Home extends React.Component {
                             onClose={this.accountSignUpClose}
                             onShow={this.accountSignUpShow}
                             onSubmit={this.accountOnSubmit}/> : <></>}
-                    {this.state.displayBigImg
-                        ? <ImageModal
-                            show={this.state.displayBigImg}
-                            onClose={this.hikeImgClose}
-                            onShow={this.hikeImgShow}
-                            image={this.state.displayedHikeBigImg} /> : <></>}
                 </div>
-                
-                {/* {this.state.searched ?
-                    <div id="hikeDiv">
-                        <Row className="hikeResultsDiv">
-                            <Col xs lg="3" className="hikeNameCol">
-                                {this.state.hikes.map(hike => 
-                                    <HikeResults 
-                                        className="hikeNameResults"
-                                        name={hike.name}
-                                        location={hike.location}
-                                        onClick={() => this.hikeOnClick(hike)}
-                                        key={hike.key}
-                                    />    
-                            )}
-                            </Col>
-                            <Col xs lg="9" className="hikeInfoCol">
-                                <HikeInfo hike={this.state.displayedHike} imgClick={this.hikeImgShow} />
-                            </Col> 
-                        </Row>
-                    </div>
-                     : <Search onSearch={this.onSearch} onKeyPress={this.handleKeypress}/>} */}
-                     <Search onSearch={this.onSearch} onKeyPress={this.handleKeypress} history={this.state.history}/>
+                <Search onSearch={this.onSearch} onKeyPress={this.handleKeypress} history={this.state.history}/>
             </div>
         );
     };

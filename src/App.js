@@ -19,6 +19,14 @@ import Explore from "./pages/explore/explore";
 //Test data
 import testJSON from "./testJSON/testJSON"
 class App extends React.Component {
+    //For testing
+    //hikes: testJSON
+    //displayedHike: testJSON[0]
+    //displayedHikeBigImg: testJSON[0].imgMedium
+    //Deployment
+    //{}
+    //{}
+    //''
     constructor(props) {
         super(props);
         this.state = {
@@ -27,9 +35,6 @@ class App extends React.Component {
             displayedHikeBigImg: testJSON[0].imgMedium
         }
     }
-
-    // hikeImgClose = () => {this.setState({displayBigImg: false})}
-    // hikeImgShow = () => {this.setState({displayBigImg: true})}
 
     render(){
         return (

@@ -2,15 +2,18 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col"
-import {withRouter} from "react-router-dom";
+// import {withRouter} from "react-router-dom";
 
 //Component
 // import NavBar from "./../../components/navBar/navBar";
 import NavBarPages from "./../../components/navBarPages/navBarAlt";
-import HikeDiv from "./../../components/hikeDiv/hikeDiv";
+// import HikeDiv from "./../../components/hikeDiv/hikeDiv";
 import HikeResults from "./../../components/hikeResults/hikeResults";
 import HikeInfo from "./../../components/hikeInfo/hikeInfo";
 import ImageModal from "./../../components/imageModal/imageModal";
+
+//API
+import Weather from "./../../api/weather";
 
 
 //CSS
@@ -27,7 +30,7 @@ class Results extends React.Component{
             displayedHikeBigImg: this.props.hikes[0].imgMedium
         }
     }
-    
+
     /**
      * Displayed hike modal
      */
@@ -37,7 +40,12 @@ class Results extends React.Component{
     hikeOnClick = async (hike) => {
         this.setState({displayedHike: hike});
         this.setState({displayedHikeBigImg: hike.imgMedium});
-
+        Weather(this.state.displayedHike.location, this.state.displayedHike.latitude, this.state.displayedHike.longitude).then((data) => {
+            this.setState({displayWeather: data});
+            console.log(data);
+        }).catch((err) => {
+            console.log(err);
+        });
         console.log(this.state.displayedHike);
     }
 
