@@ -90,6 +90,7 @@ class Home extends React.Component {
         if(e.key === 'Enter') {
             // console.log(e);
             this.onSearch();
+            this.props.history.push("/results");
         }
     }
  
@@ -170,7 +171,7 @@ class Home extends React.Component {
                             image={this.state.displayedHikeBigImg} /> : <></>}
                 </div>
                 
-                {this.state.searched ?
+                {/* {this.state.searched ?
                     <div id="hikeDiv">
                         <Row className="hikeResultsDiv">
                             <Col xs lg="3" className="hikeNameCol">
@@ -189,10 +190,8 @@ class Home extends React.Component {
                             </Col> 
                         </Row>
                     </div>
-                    // <ResultsPage 
-                    //     hikes={this.state.hikes}/>
-                     : <Search onSearch={this.onSearch} onKeyPress={this.handleKeypress}/>}
-                     {/* <Search onSearch={this.onSearch} onKeyPress={this.handleKeypress} history={this.state.history}/> */}
+                     : <Search onSearch={this.onSearch} onKeyPress={this.handleKeypress}/>} */}
+                     <Search onSearch={this.onSearch} onKeyPress={this.handleKeypress} history={this.state.history}/>
             </div>
         );
     };

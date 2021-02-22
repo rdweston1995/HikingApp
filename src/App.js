@@ -24,13 +24,12 @@ class App extends React.Component {
         this.state = {
             hikes: testJSON,
             displayedHike: testJSON[0],
-            displayedHikeBigImg: testJSON[0].imgMedium,
-            displayBigImg: false
+            displayedHikeBigImg: testJSON[0].imgMedium
         }
     }
 
-    hikeImgClose = () => {this.setState({displayBigImg: false})}
-    hikeImgShow = () => {this.setState({displayBigImg: true})}
+    // hikeImgClose = () => {this.setState({displayBigImg: false})}
+    // hikeImgShow = () => {this.setState({displayBigImg: true})}
 
     render(){
         return (
@@ -38,7 +37,7 @@ class App extends React.Component {
                 <Switch>
                     <Route exact path="/home">
                         <Home 
-                            testProp={"test"}/>
+                            history={this.state.history}/>
                     </Route>
                     {/* <Route exact path="/map" component={Map} /> */}
                     {/* <Route exact path="/account" component={Account} /> */}
@@ -47,20 +46,27 @@ class App extends React.Component {
                     </Route>
                     {/* <Route exact path="/hike" component={Hike} /> */}
                     <Route exact path="/results">
-                        <Results 
+                        <Results
+                            history={this.state.history}
                             hikes={this.state.hikes}
                             displayedHike={this.state.displayedHike}
-                            displayedHikeBigImg={this.state.displayedHikeBigImg}
-                            displayBigImg={this.state.displayBigImg}
                         />
                     </Route>
                     <Route exact path="/explore">
-                        <Explore />
+                        <Explore 
+                            history={this.state.history}
+                        />
                     </Route>
                     <Route exact path="/plan">
-                        <Plan />
+                        <Plan 
+                            history={this.state.history}
+                        />
                     </Route>
-                    <Route><Home/></Route>
+                    <Route>
+                        <Home
+                            history={this.state.history}
+                        />
+                    </Route>
                 </Switch>
             </Router>
         )
