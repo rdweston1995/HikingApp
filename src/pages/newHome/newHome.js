@@ -39,8 +39,9 @@ class Home extends React.Component {
     //{}
     //''
     constructor(props) {
-        super(props);
-        // this.returnHome = this.returnHome.bind(this);
+        super(...arguments);
+        // console.log(this.props.testProp);
+        console.log(this.props);
         this.state = {
             hikes: testJSON,
             displayedHike: testJSON[0],
@@ -52,14 +53,14 @@ class Home extends React.Component {
         }
     }
 
-   
-
     //Function to call the Hikes and Geocode API
     onSearch = async () => {
         if (document.getElementById('hikeSearch').value !== '') {
             //For Testing
             this.setState({searched: true});
             console.log(this.state.hikes);
+            console.log(this.props.testProp);
+            // console.log(props.testProp)
             // history.push('/results');
 
             //DO NOT DELETE

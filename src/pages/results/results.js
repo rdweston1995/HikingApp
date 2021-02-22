@@ -16,19 +16,20 @@ import "./results.css";
 
 class Results extends React.Component{
     constructor(props) {
-        super(props);
+        super(...arguments);
+        console.log(this.props);
     }
 
-    hikeOnClick = (hike) => {
+    // hikeOnClick = (hike) => {
         
-        this.setState({displayedHike: hike});
-        this.setState({displayedHikeBigImg: hike.imgMedium});
-        // this.setState({displayWeather: Weather(this.state.displayedHike)});
-        // Weather(this.state.displayedHike.location, this.state.displayedHike.latitude, this.state.displayedHike.longitude);
-        console.log(this.state.displayedHike);
-    }
+    //     this.setState({displayedHike: hike});
+    //     this.setState({displayedHikeBigImg: hike.imgMedium});
+    //     // this.setState({displayWeather: Weather(this.state.displayedHike)});
+    //     // Weather(this.state.displayedHike.location, this.state.displayedHike.latitude, this.state.displayedHike.longitude);
+    //     console.log(this.state.displayedHike);
+    // }
 
-    hikeImgShow = () => {this.setState({displayBigImg: true})}
+    // hikeImgShow = () => {this.setState({displayBigImg: true})}
 
 
     render() {
