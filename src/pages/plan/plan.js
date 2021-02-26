@@ -10,7 +10,7 @@ import "./plan.css";
 
 class Plan extends React.Component {
     constructor(props){
-        super(props);
+        super(...arguments);
         // this.handleKeypress = this.handleKeypress.bind(this);
 
         this.state = {
@@ -22,19 +22,19 @@ class Plan extends React.Component {
         console.log("test");
     }
 
-    handleKeypress = e => {
-        console.log(e.key);
-        if(e.key === 'Enter'){
-            console.log("You hit enter");
-        }
-    }
+    // handleKeypress = e => {
+    //     console.log(e.key);
+    //     if(e.key === 'Enter'){
+    //         console.log("You hit enter");
+    //     }
+    // }
     render() {
         return (
             <div id="planPage">
                 <NavBarAlt 
                     history={this.state.history}
-                    onSearch={this.onResultsSearch}
-                    onKeyPress={this.handleKeypress}
+                    onSearch={this.props.onSearch}
+                    onKeyPress={this.props.onKeyPress}
                     />
                 <div id="planDiv">
                     <p className="comingSoon">Coming Soon</p>

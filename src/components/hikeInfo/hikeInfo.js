@@ -65,6 +65,9 @@ function hikeInfo(props) {
                 <p className="hikeReportStatus font">{props.hike.conditionStatus}</p>
                 <p className="hikeReportDetails font">{props.hike.conditionDetails}</p>
             </div>
+            <div className="hikeWeather">
+                {/* <p>{props.weather.current.clouds}</p> */}
+            </div>
             <div className="hikingProjectLink">
                 <a className="hikeInfoUrl font" href={props.hike.url} target="_blank" rel="noopener noreferrer">HikingProject page</a>  
             </div>

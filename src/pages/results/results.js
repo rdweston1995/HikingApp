@@ -27,8 +27,23 @@ class Results extends React.Component{
             displayBigImg: false,
             hikes: this.props.hikes,
             displayedHike: this.props.hikes[0],
-            displayedHikeBigImg: this.props.hikes[0].imgMedium
+            displayedHikeBigImg: this.props.hikes[0].imgMedium,
+            displayedHikeWeather: {}
         }
+    }
+
+    // componentDidMount = async () => {
+    //     Weather(this.state.hikes[0].location, this.state.hikes[0].latitude, this.state.hikes[0].longitude).then((data) => {
+    //         console.log(data);
+    //         this.setState({displayedHikeWeather: data});
+    //     }).catch((err) => {
+    //         console.log(err);
+    //     });
+    //     console.log(this.state.displayedHikeWeather);
+    // }
+
+    componentDidMount = async () => {
+        console.log(this.props.displayWeather);
     }
 
     /**
@@ -41,19 +56,25 @@ class Results extends React.Component{
         this.setState({displayedHike: hike});
         this.setState({displayedHikeBigImg: hike.imgMedium});
         Weather(this.state.displayedHike.location, this.state.displayedHike.latitude, this.state.displayedHike.longitude).then((data) => {
-            this.setState({displayWeather: data});
+            this.setState({displayedHikeWeather: data});
             console.log(data);
         }).catch((err) => {
             console.log(err);
         });
-        console.log(this.state.displayedHike);
+        // console.log(this.state.displayedHike);
+        console.log(this.state.displayedHikeWeather);
+
     }
+
+    
 
 
     render() {
         return(
             <div className="resultsPage hikeDiv">
-                <NavBarPages />
+                <NavBarPages 
+                    onSearch={this.props.onSearch}
+                    onKeyPress={this.props.onKeyPress}/>
                 {this.state.displayBigImg ?
                     <ImageModal
                         show={this.state.displayBigImg}
@@ -73,7 +94,7 @@ class Results extends React.Component{
                         )}
                     </Col>
                     <Col xs lg="9" className="hikeInfoCol">
-                        <HikeInfo hike={this.state.displayedHike} imgClick={this.hikeImgShow} />
+                        <HikeInfo hike={this.state.displayedHike} imgClick={this.hikeImgShow} weather={this.state.displayedHikeWeather}/>
                     </Col>
                 </Row>
             </div>

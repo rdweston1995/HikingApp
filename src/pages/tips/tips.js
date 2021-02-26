@@ -8,10 +8,15 @@ import NavBarAlt from "./../../components/navBarPages/navBarAlt";
 import "./tips.css";
 
 class Tips extends React.Component {
+    constructor(props){
+        super(...arguments);
+    }
     render() {
         return (
             <div id="tipsPage">
-                <NavBarAlt />
+                <NavBarAlt 
+                    onSearch={this.props.onSearch}
+                    onKeyPress={this.props.onKeyPress}/>
                 <div id="tipsDiv">
                     <p className="comingSoon">Coming Soon</p>
                 </div>

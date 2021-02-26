@@ -9,10 +9,15 @@ import NavBarAlt from "./../../components/navBarPages/navBarAlt";
 import "./explore.css";
 
 class Explore extends React.Component {
+    constructor(props) {
+        super(...arguments);
+    }
     render() {
         return (
             <div id="explorePage">
-                <NavBarAlt />
+                <NavBarAlt 
+                    onSearch={this.props.onSearch}
+                    onKeyPress={this.props.onKeyPress}/>
                 <div id="exploreDiv">
                     <p className="comingSoon">Coming Soon</p>
                 </div>

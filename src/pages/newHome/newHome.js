@@ -23,6 +23,7 @@ import "./newHome.css";
 //API
 import Hikes from "./../../api/hikes";
 import Geocode from "./../../api/geocode";
+import Weather from "./../../api/weather";
 
 //Test Data
 import testJSON from "./../../testJSON/testJSON";
@@ -57,7 +58,12 @@ class Home extends React.Component {
             //For Testing
             this.setState({searched: true});
             console.log(this.state.hikes);
-            console.log(this.props.testProp);
+            // this.props.testGetWeather(this.state.hikes[0].location, this.state.hikes[0].latitude, this.state.hikes[0].longitude);
+            Weather(this.state.hikes[0].location, this.state.hikes[0].latitude, this.state.hikes[0].longitude).then((data) => {
+                console.log(data);
+            }).catch((err) => {
+                console.log(err);
+            })
             // console.log(props.testProp)
             // history.push('/results');
 
@@ -87,7 +93,7 @@ class Home extends React.Component {
     handleKeypress = e => {
         if(e.key === 'Enter') {
             // console.log(e);
-            this.onSearch();
+            this.props.onSearch();
             this.props.history.push("/results");
         }
     }
@@ -159,7 +165,7 @@ class Home extends React.Component {
                             onShow={this.accountSignUpShow}
                             onSubmit={this.accountOnSubmit}/> : <></>}
                 </div>
-                <Search onSearch={this.onSearch} onKeyPress={this.handleKeypress} history={this.state.history}/>
+                <Search onSearch={this.props.onSearch} onKeyPress={this.props.onKeyPress} history={this.state.history}/>
             </div>
         );
     };
