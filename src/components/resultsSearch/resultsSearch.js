@@ -11,10 +11,10 @@ import "./resultsSearch.css";
 function resultsSearch (props) {
     return(
         <div id="resultsSearch" className="searchResultsDiv">
-            <InputGroup id="resultsSearchBar" onKeyPress={(e) => props.onKeyPress(e)}>
+            <InputGroup id="resultsSearchBar" onKeyPress={(e) => {props.onKeyPress(e); props.keyPressRoute(e)}}>
                 <FormControl id="resultsHikeSearch" type="text" aria-describedby="basic-addon2" placeholder="Enter a city, park, or trail"/>
                 <InputGroup.Append>
-                    <Button id="resultsSearchButton" className="resultsSearchButton" varian="outline-secondary" onClick={(e) => props.onSearch()}>Explore</Button>
+                    <Button id="resultsSearchButton" className="resultsSearchButton" varian="outline-secondary" onClick={(e) => {props.onSearch(); props.history.push('/results')}}>Explore</Button>
                 </InputGroup.Append>
             </InputGroup>
         </div>

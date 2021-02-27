@@ -132,6 +132,10 @@ class Home extends React.Component {
         console.log("returnHome");
         this.setState({searched: false})}
 
+    keyPressRoute = (e) => {
+        if(e.key === 'Enter'){this.props.history.push('/results')}
+    }
+
     //Render function
     /**
      * Change routing for results page to acutally not just be the home page
@@ -165,7 +169,7 @@ class Home extends React.Component {
                             onShow={this.accountSignUpShow}
                             onSubmit={this.accountOnSubmit}/> : <></>}
                 </div>
-                <Search onSearch={this.props.onSearch} onKeyPress={this.props.onKeyPress} history={this.state.history}/>
+                <Search onSearch={this.props.onSearch} onKeyPress={this.props.onKeyPress} keyPressRoute={this.keyPressRoute} history={this.state.history}/>
             </div>
         );
     };

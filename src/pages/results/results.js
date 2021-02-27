@@ -2,7 +2,7 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col"
-// import {withRouter} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 
 //Component
 // import NavBar from "./../../components/navBar/navBar";
@@ -63,10 +63,11 @@ class Results extends React.Component{
         });
         // console.log(this.state.displayedHike);
         console.log(this.state.displayedHikeWeather);
-
     }
 
-    
+    keyPressRoute = (e) => {
+        if(e.key === 'Enter'){this.props.history.push('/results')}
+    }
 
 
     render() {
@@ -74,7 +75,9 @@ class Results extends React.Component{
             <div className="resultsPage hikeDiv">
                 <NavBarPages 
                     onSearch={this.props.onSearch}
-                    onKeyPress={this.props.onKeyPress}/>
+                    onKeyPress={this.props.onKeyPress}
+                    keyPressRoute={this.keyPressRoute}
+                    history={this.props.history} />
                 {this.state.displayBigImg ?
                     <ImageModal
                         show={this.state.displayBigImg}
@@ -102,4 +105,4 @@ class Results extends React.Component{
     }
 }
 
-export default Results;
+export default withRouter(Results);

@@ -70,6 +70,7 @@ class App extends React.Component {
     onKeyPressResults = e => {
         if(e.key === 'Enter') {
             this.onSearchResults();
+            // this.state.history.push("/results");
         }
     }
 
@@ -81,7 +82,7 @@ class App extends React.Component {
                         <Home 
                             history={this.state.history}
                             onSearch={this.onSearch}
-                            obKeyPress={this.onKeyPress}/>
+                            onKeyPress={this.onKeyPress}/>
                     </Route>
                     {/* <Route exact path="/map" component={Map} /> */}
                     {/* <Route exact path="/account" component={Account} /> */}

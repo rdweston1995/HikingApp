@@ -24,7 +24,9 @@ function navBarAlt(props) {
             <Col>
                 <ResultsSearch 
                     onSearch={props.onSearch}
-                    onKeyPress={props.onKeyPress}/>
+                    onKeyPress={props.onKeyPress}
+                    keyPressRoute={props.keyPressRoute}
+                    history={props.history}/>
             </Col>
             <Col>
                 <DropdownBtn id="dropdown-basic-button" className="testBtn" title={<Hamburger/>} styles={{float: 'right'}}>

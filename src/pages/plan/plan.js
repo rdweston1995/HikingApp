@@ -12,7 +12,7 @@ class Plan extends React.Component {
     constructor(props){
         super(...arguments);
         // this.handleKeypress = this.handleKeypress.bind(this);
-
+        console.log(this.props);
         this.state = {
             
         };
@@ -20,6 +20,10 @@ class Plan extends React.Component {
 
     onResultsSearch = async () => {
         console.log("test");
+    }
+
+    keyPressRoute = (e) => {
+        if(e.key === 'Enter'){this.props.history.push('/results')}
     }
 
     // handleKeypress = e => {
@@ -35,6 +39,7 @@ class Plan extends React.Component {
                     history={this.state.history}
                     onSearch={this.props.onSearch}
                     onKeyPress={this.props.onKeyPress}
+                    keyPressRoute={this.keyPressRoute}
                     />
                 <div id="planDiv">
                     <p className="comingSoon">Coming Soon</p>
