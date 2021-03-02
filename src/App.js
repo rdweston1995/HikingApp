@@ -17,6 +17,7 @@ import Plan from "./pages/plan/plan";
 import Explore from "./pages/explore/explore";
 
 import Weather from "./api/weather";
+import Hikes from "./"
 
 //Test data
 import testJSON from "./testJSON/testJSON"
