@@ -7,6 +7,8 @@ import loadImages from "../loadImages/loadImages";
 //CSS
 import "./hikeInfo.css";
 
+import Weather from "./../../api/weather";
+
 
     /**
      * Change font
@@ -25,6 +27,15 @@ class hikeInfo extends React.Component {
     constructor(props){
         super(...arguments);
         this.state={}
+    }
+
+    componentDidMount = () => {
+        Weather(this.props.hike.location, this.props.hike.latitude, this.props.hike.longitude).then((data) => {
+            this.setState({weather: data});
+            console.log(this.state.weather);
+        }).catch((err) => {
+            console.log(err);
+        })
     }
     render(){
         return (
