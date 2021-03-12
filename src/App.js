@@ -18,6 +18,7 @@ import Explore from "./pages/explore/explore";
 
 import Weather from "./api/weather";
 import Hikes from "./api/hikes";
+import Geocode from "./api/geocode";
 
 //Test data
 import testJSON from "./testJSON/testJSON"
@@ -33,10 +34,10 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            hikes: testJSON,
-            displayedHike: testJSON[0],
-            displayedHikeBigImg: testJSON[0].imgMedium,
-            displayWeather: {}
+            hikes: {},
+            displayedHike: {},
+            displayedHikeBigImg: '',
+            searchQ: ''
         }
     }
 
@@ -52,6 +53,30 @@ class App extends React.Component {
     onSearch = async () => {
         if(document.getElementById('hikeSearch').value !== ''){
             console.log(document.getElementById("hikeSearch").value);
+            //For Testing
+            // console.log(this.state.hikes);
+            this.setState({searchQ: document.getElementById('hikeSearch').value});
+
+
+            //DO NOT DELETE
+            // let lat = '', lng = '', maxDistance = '30', maxResults = '10', minLength = '0', minStars = '0';
+
+            // Geocode(document.getElementById('hikeSearch').value).then((data) => {
+            //     console.log(`maxDistance ${maxDistance} | maxResults ${maxResults} | minLength ${minLength} | minStars ${minStars}`);
+            //     lat = data.geometry.location.lat;
+            //     lng = data.geometry.location.lng;
+            //     Hikes(lat, lng).then((returnedHikes) => {
+            //         console.log(returnedHikes);
+            //         this.setState({hikes: returnedHikes});
+            //         this.setState({displayedHike: returnedHikes[0]});
+            //         this.setState({displayedHikeBigImg: returnedHikes[0].imgMedium});
+            //         console.log(this.state.hikes);
+            //     }).catch((err) => {
+            //         console.log(err);
+            //     });
+            // }).catch((err) => {
+            //     console.log(err);
+            // });
         } 
     }
 
@@ -103,6 +128,7 @@ class App extends React.Component {
                             hikes={this.state.hikes}
                             displayedHike={this.state.displayedHike}
                             displayWeather={this.state.displayWeather}
+                            searchQ={this.state.searchQ}
                         />
                     </Route>
                     <Route exact path="/explore">

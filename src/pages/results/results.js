@@ -14,41 +14,53 @@ import ImageModal from "./../../components/imageModal/imageModal";
 
 //API
 import Weather from "./../../api/weather";
+import Geocode from "./../../api/geocode";
+import Hikes from "./../../api/hikes";
 
 
 //CSS
 import "./results.css";
 
 class Results extends React.Component{
+    //hikes: this.props.hikes,
+    //displayedHike: this.props.hikes[0],
+    //displayedHikeBigImg: this.props.hikes[0].imgMedium
     constructor(props) {
         super(...arguments);
         console.log(this.props);
         this.state = {
             displayBigImg: false,
-            hikes: this.props.hikes,
-            displayedHike: this.props.hikes[0],
-            displayedHikeBigImg: this.props.hikes[0].imgMedium,
-            displayedHikeWeather: {}
+            hikes: {},
+            displayedHike: {},
+            displayedHikeBigImg: '',
+            displayResults: false
         }
-    }
-
-    // componentDidMount = async () => {
-    //     Weather(this.state.hikes[0].location, this.state.hikes[0].latitude, this.state.hikes[0].longitude).then((data) => {
-    //         console.log(data);
-    //         this.setState({displayedHikeWeather: data});
-    //     }).catch((err) => {
-    //         console.log(err);
-    //     });
-    //     console.log(this.state.displayedHikeWeather);
-    // }
-
-    componentDidMount = async () => {
-        console.log(this.props.displayWeather);
     }
 
     /**
      * Displayed hike modal
      */
+    componentDidMount = () => {
+        let lat = '', lng = '', maxDistance = '30', maxResults = '10', minLength = '0', minStars = '0';
+
+        Geocode(this.state.searchQ).then((data) => {
+            console.log(`maxDistance ${maxDistance} | maxResults ${maxResults} | minLength ${minLength} | minStars ${minStars}`);
+            lat = data.geometry.location.lat;
+            lng = data.geometry.location.lng;
+            Hikes(lat, lng).then((returnedHikes) => {
+                console.log(returnedHikes);
+                this.setState({hikes: returnedHikes});
+                this.setState({displayedHike: returnedHikes[0]});
+                this.setState({displayedHikeBigImg: returnedHikes[0].imgMedium});
+                this.setState({displayResults: true});
+                console.log(this.state.hikes);
+            }).catch((err) => {
+                console.log(err);
+            });
+        }).catch((err) => {
+            console.log(err);
+        });
+    }
     hikeImgShow = () => {this.setState({displayBigImg: true})}
     hikeImgClose = () => {this.setState({displayBigImg: false})}
 
@@ -85,21 +97,23 @@ class Results extends React.Component{
                         onShow={this.hikeImgShow}
                         image={this.state.displayedHikeBigImg} /> : <></>
                     }
+                {this.state.displayResults ? 
                 <Row className="hikeResultsDiv">
-                    <Col xs lg="3" className='hikeNameCol'>
-                        {this.props.hikes.map(hike => 
-                            <HikeResults
-                                className="hikeNameResults"
-                                name={hike.name}
-                                location={hike.location}
-                                onClick={() => this.hikeOnClick(hike)}
-                                key={hike.key} />
-                        )}
-                    </Col>
-                    <Col xs lg="9" className="hikeInfoCol">
-                        <HikeInfo hike={this.state.displayedHike} imgClick={this.hikeImgShow} weather={this.state.displayedHikeWeather}/>
-                    </Col>
-                </Row>
+                    
+                        <Col xs lg="3" className='hikeNameCol'>
+                            {this.state.hikes.map(hike => 
+                                <HikeResults
+                                    className="hikeNameResults"
+                                    name={hike.name}
+                                    location={hike.location}
+                                    onClick={() => this.hikeOnClick(hike)}
+                                    key={hike.key} />
+                            )}
+                        </Col>
+                        <Col xs lg="9" className="hikeInfoCol">
+                            <HikeInfo hike={this.state.displayedHike} imgClick={this.hikeImgShow} weather={this.state.displayedHikeWeather}/>
+                        </Col> 
+                </Row> : <></>}
             </div>
         )
     }
