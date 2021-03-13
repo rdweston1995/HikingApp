@@ -27,13 +27,14 @@ class Results extends React.Component{
     //displayedHikeBigImg: this.props.hikes[0].imgMedium
     constructor(props) {
         super(...arguments);
-        console.log(this.props);
+        // console.log(this.props);
         this.state = {
             displayBigImg: false,
             hikes: {},
             displayedHike: {},
             displayedHikeBigImg: '',
-            displayResults: false
+            displayResults: false,
+            searchQ: this.props.searchQ
         }
     }
 
@@ -42,25 +43,28 @@ class Results extends React.Component{
      */
     componentDidMount = () => {
         let lat = '', lng = '', maxDistance = '30', maxResults = '10', minLength = '0', minStars = '0';
-
-        Geocode(this.state.searchQ).then((data) => {
-            console.log(`maxDistance ${maxDistance} | maxResults ${maxResults} | minLength ${minLength} | minStars ${minStars}`);
-            lat = data.geometry.location.lat;
-            lng = data.geometry.location.lng;
-            Hikes(lat, lng).then((returnedHikes) => {
-                console.log(returnedHikes);
-                this.setState({hikes: returnedHikes});
-                this.setState({displayedHike: returnedHikes[0]});
-                this.setState({displayedHikeBigImg: returnedHikes[0].imgMedium});
-                this.setState({displayResults: true});
-                console.log(this.state.hikes);
+        if(this.state.searchQ !== undefined || this.state.searchQ !== ''){
+            console.log(this.state.searchQ);
+            Geocode(this.state.searchQ).then((data) => {
+                // console.log(`maxDistance ${maxDistance} | maxResults ${maxResults} | minLength ${minLength} | minStars ${minStars}`);
+                lat = data.geometry.location.lat;
+                lng = data.geometry.location.lng;
+                Hikes(lat, lng).then((returnedHikes) => {
+                    // console.log(returnedHikes);
+                    this.setState({hikes: returnedHikes});
+                    this.setState({displayedHike: returnedHikes[0]});
+                    this.setState({displayedHikeBigImg: returnedHikes[0].imgMedium});
+                    this.setState({displayResults: true});
+                    console.log(this.state.hikes);
+                }).catch((err) => {
+                    console.log(err);
+                });
             }).catch((err) => {
                 console.log(err);
             });
-        }).catch((err) => {
-            console.log(err);
-        });
+        } 
     }
+
     hikeImgShow = () => {this.setState({displayBigImg: true})}
     hikeImgClose = () => {this.setState({displayBigImg: false})}
 
@@ -107,7 +111,7 @@ class Results extends React.Component{
                                     name={hike.name}
                                     location={hike.location}
                                     onClick={() => this.hikeOnClick(hike)}
-                                    key={hike.key} />
+                                    key={hike.id} />
                             )}
                         </Col>
                         <Col xs lg="9" className="hikeInfoCol">
