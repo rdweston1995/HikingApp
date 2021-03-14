@@ -52,7 +52,7 @@ class App extends React.Component {
 
     onSearch = async () => {
         if(document.getElementById('hikeSearch').value !== ''){
-            console.log(document.getElementById("hikeSearch").value);
+            // console.log(document.getElementById("hikeSearch").value);
             //For Testing
             // console.log(this.state.hikes);
             this.setState({searchQ: document.getElementById('hikeSearch').value});

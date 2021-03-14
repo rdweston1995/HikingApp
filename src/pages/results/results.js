@@ -44,7 +44,7 @@ class Results extends React.Component{
     componentDidMount = () => {
         let lat = '', lng = '', maxDistance = '30', maxResults = '10', minLength = '0', minStars = '0';
         if(this.state.searchQ !== undefined || this.state.searchQ !== ''){
-            console.log(this.state.searchQ);
+            // console.log(this.state.searchQ);
             Geocode(this.state.searchQ).then((data) => {
                 // console.log(`maxDistance ${maxDistance} | maxResults ${maxResults} | minLength ${minLength} | minStars ${minStars}`);
                 lat = data.geometry.location.lat;
