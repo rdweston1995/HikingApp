@@ -52,13 +52,9 @@ class App extends React.Component {
 
     onSearch = async () => {
         if(document.getElementById('hikeSearch').value !== ''){
-            // console.log(document.getElementById("hikeSearch").value);
-            //For Testing
-            // console.log(this.state.hikes);
             this.setState({searchQ: document.getElementById('hikeSearch').value});
 
-
-            //DO NOT DELETE
+            //DO NOT DELETE but maybe tho
             // let lat = '', lng = '', maxDistance = '30', maxResults = '10', minLength = '0', minStars = '0';
 
             // Geocode(document.getElementById('hikeSearch').value).then((data) => {
@@ -83,6 +79,8 @@ class App extends React.Component {
     onSearchResults = async () => {
         if(document.getElementById("resultsHikeSearch").value !== '') {
             console.log(document.getElementById("resultsHikeSearch").value);
+            this.setState({searchQ: document.getElementById('resultsHikeSearch').value});
+
         }
     }
 
