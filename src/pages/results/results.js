@@ -78,7 +78,7 @@ class Results extends React.Component{
             console.log(err);
         });
         // console.log(this.state.displayedHike);
-        console.log(this.state.displayedHikeWeather);
+        // console.log(this.state.displayedHikeWeather);
     }
 
     keyPressRoute = (e) => {

@@ -87,14 +87,12 @@ class App extends React.Component {
     onKeyPress = e => {
         if(e.key === 'Enter') {
             this.onSearch();
-            // this.state.history.push("/results");
         }
     }
 
     onKeyPressResults = e => {
         if(e.key === 'Enter') {
             this.onSearchResults();
-            // this.state.history.push("/results");
         }
     }
 

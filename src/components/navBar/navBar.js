@@ -39,7 +39,7 @@ function navBar(props) {
             </Col> */}
             <Col>
             {/* <Button className="navBarBtn loginBtn" onClick={(e) => props.loginHandleShow()}>Login</Button> */}
-            <DropdownBtn id="dropdown-basic-button" className="testBtn" title={<Hamburger/>} styles={{float: 'right'}}>
+            <DropdownBtn id="dropdown-basic-button" className="testBtn dropDownBtn" title={<Hamburger/>} styles={{float: 'right'}}>
                 <Dropdown.Item className="navBarTag tagExplore" onClick={() => props.history.push('/explore')}>Explore</Dropdown.Item>
                 <Dropdown.Item className="navBarTag tagPlan" onClick={() => props.history.push('/plan')}>Plan</Dropdown.Item>
                 <Dropdown.Item className="navBarTag tagTips" onClick={() => props.history.push('/tips')}>Tips</Dropdown.Item>

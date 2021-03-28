@@ -89,10 +89,12 @@
     border-color: #4a660e;
 }
 
-.btn-primary.dropdown-toggle{
+.btn-primary:hover{
     background-color: #4a660e;
     border-color: #4a660e;
 }
+
+
 
 /* .show{
     background-color: #4a660e;
