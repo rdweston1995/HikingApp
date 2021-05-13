@@ -50,7 +50,7 @@ class hikeInfo extends React.Component {
                             <p className="hikeInfoStars font">{this.props.hike.stars} / 5 stars</p>
                         </Row>
                         <Row>
-                            <p className="hikeInfoLeng font">Lenght: {this.props.hike.length} miles</p>
+                            <p className="hikeInfoLeng font">Length: {this.props.hike.length} miles</p>
                             <p className="hikeInfoAscent font">Ascent: {this.props.hike.ascent}ft</p>
                             <p className="hikeInfoHiLo font">Low: {this.props.hike.low}ft - High: {this.props.hike.high}ft</p>
                         </Row>
